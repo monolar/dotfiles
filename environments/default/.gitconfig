@@ -1,0 +1,16 @@
+[user]
+	name = Andreas Marr
+	email = andreasm@artcom.de
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
+[core]
+	editor = mate -w
+	excludesfile = ~/.global_gitignore
+[mergetool]
+	keepBackup = true
+[push]
+	default = simple

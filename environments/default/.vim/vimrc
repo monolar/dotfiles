@@ -1,0 +1,64 @@
+set modeline
+set encoding=utf-8
+syntax enable
+set number
+
+" enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Be smart when using tabs
+set smarttab
+set noerrorbells
+set nocompatible
+set ai
+set si
+set cindent
+set mouse=a
+set nowrap
+set incsearch
+set showmatch
+set mat=5
+set wrap
+set hls
+set cul
+set wrapscan
+set sol
+
+"set guioptions-=T
+set selectmode=mouse
+set showmode
+set showcmd
+set title
+set ignorecase
+set smartcase
+
+execute pathogen#infect()
+set t_Co=256
+
+set rtp+=~/.vim/bundle/powerline/bindings/vim
+
+"python << EOF
+"import os
+"import sys
+"import vim
+"for p in sys.path:
+"    if os.path.isdir(p):
+"        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+"EOF
+"
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"inoremap <Nul> <C-x><C-o>
