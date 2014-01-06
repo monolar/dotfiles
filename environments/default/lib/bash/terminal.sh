@@ -31,12 +31,12 @@ PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Python
-PATH="/usr/local/share/python3.2:$PATH"
-#PATH="/usr/local/share/python:$PATH"
+PATH="${BREW_DIR}/share/python3.2:$PATH"
+#PATH="${BREW_DIR}/share/python:$PATH"
 
 # Y60
 #export PATH=/artcom/bin:$PATH
 
 # npm
-# PATH="/usr/local/lib/node_modules:$PATH"
-# PATH="/usr/local/share/npm/bin:$PATH"
+# PATH="${BREW_DIR}/lib/node_modules:$PATH"
+# PATH="${BREW_DIR}/share/npm/bin:$PATH"
