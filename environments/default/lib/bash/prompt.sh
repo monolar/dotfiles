@@ -1,22 +1,11 @@
-# RESET="\[\017\]"
-# NORMAL="\[\033[0m\]"
-# RED="\[\033[31;1m\]"
-# YELLOW="\[\033[33;1m\]"
-# WHITE="\[\033[37;1m\]"
-#SMILEY="${WHITE}:)${NORMAL}"
-#FROWNY="${RED}:(${NORMAL}"
-SMILEY="😊 "
-FROWNY="😕 "
-# SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-
 last_state() {
   if [ $? = 0 ];
     then
-      #echo ":)";
-      echo "${SMILEY}";
+      # echo "😊 ";
+      echo -e "\e[32m✔";
     else
-      #echo ":(";
-      echo "${FROWNY}";
+      # echo "😕 ";
+      echo -e "\e[31m✘";
     fi
 }
 
