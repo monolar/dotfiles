@@ -1,33 +1,41 @@
-# General Terminal Settings
-export TERM=xterm-color
-export CLICOLOR=true
+# Find out where we are.
+# Thanks to http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+LIB="${DIR}/lib"
 
-# History management
-export HISTCONTROL=ignoredups:erasedups
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-shopt -s histappend
-#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-function hs {
-    grep $1 $HISTFILE
-}
+# Load Homebrew specific profile settings.
+source "${LIB}/homebrew/env.sh"
 
-# man pages
-pman () {
-    man -t "${1}" | open -f -a /Applications/Preview.app
-}
+# Load general bash settings.
+source "${LIB}/bash/terminal.sh"
 
-# Homebrew Path Fix
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+# Aliasses
+source "${LIB}/bash/alias.sh"
+
+# git
+source "${LIB}/git/env.sh"
+
+# Other user settings
+source "${LIB}/bash/user.sh"
+
+# rvm settings
+source "${LIB}/rvm/env.sh"
+
+# Load our prompt
+source "${LIB}/bash/prompt.sh"
 
 # nimrod
-PATH="/usr/local/Cellar/nimrod/0.9.2/libexec/bin:$PATH"
+PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
 
 # Completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 # custom completions
 source ~/vagrant_completion.sh
@@ -40,24 +48,8 @@ source ~/vagrant_completion.sh
 PATH="/usr/local/share/python3.2:$PATH"
 #PATH="/usr/local/share/python:$PATH"
 
-# General Settings
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-export LC_TYPE=de_DE.UTF-8
-
 # Y60
 #export PATH=/artcom/bin:$PATH
-
-# Custom user executables
-export PATH=~/bin:$PATH
-
-# RVM
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-# In case we use Jruby we want 1.9 to be the default
-export JRUBY_OPTS=--1.9
-
-# Add Homebrew Coreutils to Path
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # npm
 PATH="/usr/local/lib/node_modules:$PATH"
@@ -173,18 +165,6 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-bower-completion-###
 
-# Vim in less mode alias
-alias vless="/usr/share/vim/vim73/macros/less.sh"
-
-# LS Settings
-alias ls="ls --color=auto"
-alias la="ls --color=auto -laF"
-
-eval `dircolors ~/.dir_colors`
-
-# Grep Options
-export GREP_OPTIONS="--color=auto --exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.log\*"
-
 ########################
 # Rake bash-completion #
 ########################
@@ -226,6 +206,7 @@ function _rakecomplete() {
 }
 
 complete -o default -o nospace -F _rakecomplete rake
+
 ##############################
 # Capistrano bash-completion #
 ##############################
@@ -237,64 +218,5 @@ _capcomplete() {
     return 0
 }
 complete -o default -o nospace -F _capcomplete cap
-
-###############
-# GIT SUPPORT #
-###############
-source ~/.git_completion.sh
-#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-
-# Returns "*" if the current git branch is dirty.
-function parse_git_dirty {
-    [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "🔴 "
-}
-
-# Returns "|shashed:N" where N is the number of stashed states (if any).
-function parse_git_stash {
-    local stash=`expr $(git stash list 2>/dev/null| wc -l)`
-    if [ "${stash}" != "0" ]
-    then
-        echo "|stashed:$stash"
-    fi
-}
-
-# Get the current git branch name (if available)
-git_prompt() {
-    local ref=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3)
-    if [ "${ref}" != "" ]
-    then
-        echo "($ref$(parse_git_dirty)$(parse_git_stash)) "
-    fi
-}
-
-alias lg="git log --decorate --graph --oneline"
-
-RESET="\[\017\]"
-NORMAL="\[\033[0m\]"
-RED="\[\033[31;1m\]"
-YELLOW="\[\033[33;1m\]"
-WHITE="\[\033[37;1m\]"
-#SMILEY="${WHITE}:)${NORMAL}"
-#FROWNY="${RED}:(${NORMAL}"
-SMILEY="😊 "
-FROWNY="😕 "
-SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
-
-last_state() {
-  if [ $? = 0 ];
-    then
-      #echo ":)";
-      echo "${SMILEY}";
-    else
-      #echo ":(";
-      echo "${FROWNY}";
-    fi
-}
-
-current_rvm() {
-      echo `rvm current`
-}
-
-export PS1='\[\e[01;32m\]\u@\h:\[\e[01;34m\]\W \[\e[01;36m\]$(last_state) \[\e[01;33m\][rvm:$(current_rvm)]  \[\e[01;35m\]$(git_prompt)\[\e[01;33m\]$\[\e[0m\] '
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
