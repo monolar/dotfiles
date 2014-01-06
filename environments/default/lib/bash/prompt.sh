@@ -9,4 +9,4 @@ last_state() {
     fi
 }
 
-export PS1='\[\e[01;32m\]\u@\h:\[\e[01;34m\]\W \[\e[01;36m\]$(last_state) \[\e[01;33m\][rvm:$(current_rvm)]  \[\e[01;35m\]$(git_prompt)\[\e[01;33m\]$\[\e[0m\] '
+export PS1='\[\e[01;32m\]\u@\h:\[\e[01;34m\]\W \[\e[01;36m\]$(last_state) \[\e[01;33m\][rvm:$(current_rvm)] $(git_prompt)\[\e[01;33m\]$\[\e[0m\] '

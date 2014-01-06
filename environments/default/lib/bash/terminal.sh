@@ -30,6 +30,9 @@ PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
 
+# GRC
+source "${BREW_DIR}/etc/grc.bashrc"
+
 # Python
 PATH="${BREW_DIR}/share/python3.2:$PATH"
 #PATH="${BREW_DIR}/share/python:$PATH"

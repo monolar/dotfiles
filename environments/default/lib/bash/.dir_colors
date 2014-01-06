@@ -37,7 +37,7 @@ EIGHTBIT 1
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 NORMAL 00   # global default, although everything should be something.
 FILE 00     # normal file
-DIR 00;36   # directory
+DIR 00;38;5;37
 LINK 00;35  # symbolic link
 FIFO 40;33  # pipe
 SOCK 01;35  # socket
@@ -46,8 +46,8 @@ CHR 40;32;00    # character device driver
 ORPHAN 01;05;37;41  # orphaned syminks
 MISSING 01;05;37;41 # ... and the files they point to
 # This is for files with execute permission:
-#EXEC 00;33
-EXEC 01;35
+
+EXEC 01;38;5;140
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
@@ -73,10 +73,37 @@ EXEC 01;35
 .tz  00;31
 .rpm 00;31
 .cpio 00;31
-.jpg 00;35 # image formats
-.gif 00;35
-.bmp 00;35
-.xbm 00;35
-.xpm 00;35
-.png 00;35
-.tif 00;35
+.jpg 00;38;5;177 # image formats
+.gif 00;38;5;177
+.bmp 00;38;5;177
+.xbm 00;38;5;177
+.xpm 00;38;5;177
+.png 00;38;5;177
+.tif 00;38;5;177
+
+# Files of special interest
+*Makefile        01;38;5;137
+*Rakefile        01;38;5;137
+*Capfile         01;38;5;137
+*Gemfile         01;38;5;137
+*Gemfile.lock    01;38;5;138
+*Guardfile       01;38;5;137
+*README          01;38;5;137
+*README.txt      01;38;5;137
+*readme.txt      01;38;5;137
+.md              01;38;5;137
+*README.markdown 01;38;5;137
+.yml             01;38;5;137
+
+# GIT
+.git            01;38;5;75
+*.gitignore     01;38;5;75
+
+# Code
+.rb             00;38;5;215
+
+# Files of special desinterest
+*.DS_Store       00;38;5;240
+.swp             00;38;5;240
+.tmp             00;38;5;240
+*~               00;38;5;240
