@@ -17,7 +17,26 @@ function hs {
     grep $1 $HISTFILE
 }
 
-eval `dircolors ~/.dir_colors`
+eval `dircolors ${LIB}/bash/.dir_colors`
 
 # Grep Options
 export GREP_OPTIONS="--color=auto --exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.log\*"
+
+### MISC ###
+
+# nimrod
+PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
+
+# Z
+. `brew --prefix`/etc/profile.d/z.sh
+
+# Python
+PATH="/usr/local/share/python3.2:$PATH"
+#PATH="/usr/local/share/python:$PATH"
+
+# Y60
+#export PATH=/artcom/bin:$PATH
+
+# npm
+# PATH="/usr/local/lib/node_modules:$PATH"
+# PATH="/usr/local/share/npm/bin:$PATH"
