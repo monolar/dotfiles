@@ -24,6 +24,9 @@ source "${LIB}/git/env.sh"
 # Other user settings
 source "${LIB}/bash/user.sh"
 
+# Android SDK Settings
+source "${LIB}/android/env.sh"
+
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
 source "${LIB}/bash/completion/rake.sh"
@@ -31,6 +34,8 @@ source "${LIB}/bash/completion/capistrano.sh"
 source "${LIB}/bash/completion/npm.sh"
 source "${LIB}/bash/completion/bower.sh"
 source "${LIB}/bash/completion/vagrant.sh"
+source "${LIB}/bash/completion/maven.sh"
+
 
 # rvm settings
 source "${LIB}/rvm/env.sh"
