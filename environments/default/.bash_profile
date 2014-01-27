@@ -27,6 +27,9 @@ source "${LIB}/bash/user.sh"
 # Android SDK Settings
 source "${LIB}/android/env.sh"
 
+# NPM Settings
+source "${LIB}/npm/env.sh"
+
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
 source "${LIB}/bash/completion/rake.sh"
