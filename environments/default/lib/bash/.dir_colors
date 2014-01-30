@@ -87,7 +87,10 @@ EXEC 01;38;5;140
 *Capfile         01;38;5;137
 *Gemfile         01;38;5;137
 *Gemfile.lock    01;38;5;138
+*Puppetfile      01;38;5;137
+*Puppetfile.lock 01;38;5;138
 *Guardfile       01;38;5;137
+*Vagrantfile     01;38;5;137
 *README          01;38;5;137
 *README.txt      01;38;5;137
 *readme.txt      01;38;5;137
@@ -107,3 +110,4 @@ EXEC 01;38;5;140
 .swp             00;38;5;240
 .tmp             00;38;5;240
 *~               00;38;5;240
+.rake_t_cache    00;38;5;240
