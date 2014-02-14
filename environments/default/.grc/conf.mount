@@ -1,0 +1,3 @@
+regexp=^(.*) on (.*) \((.*)\)
+colours=default,green,yellow,blue
+count=more

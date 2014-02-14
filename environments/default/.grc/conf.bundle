@@ -1,0 +1,18 @@
+# Using gem
+regexp=^(Using) ([a-zA-Z-].*) \((.*)\) ?$
+colours=default, none, blue, magenta
+count=more
+=====
+# Installing gem
+regexp=^(Installing) ([a-zA-Z-].*) \((.*)\) ?$
+colours=default, bold yellow, blue, magenta
+count=more
+=====
+# Recolouring
+regexp=^Your bundle.*$
+colours=green
+count=more
+=====
+regexp=^Use `(.*)`.*$
+colours=green, magenta
+count=more

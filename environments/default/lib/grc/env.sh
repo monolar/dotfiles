@@ -3,5 +3,13 @@
 # Enable grc support
 source "${BREW_DIR}/etc/grc.bashrc"
 
-# grc aliases
+### grc aliases ##
+
+# curl
 alias curl='colourify curl'
+
+# mount
+alias mount='colourify mount'
+
+# bundle
+alias bundle='colourify bundle'
