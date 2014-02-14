@@ -1,6 +1,6 @@
 # Using gem
-regexp=^(Using) ([a-zA-Z-].*) \((.*)\) ?$
-colours=default, none, blue, magenta
+regexp=^(Using) ([a-zA-Z-].*) \((.*)\) (.*at (.*))?$
+colours=default, none, blue, magenta, dark, yellow bold
 count=more
 =====
 # Installing gem
