@@ -39,6 +39,8 @@ source "${LIB}/bash/completion/bower.sh"
 source "${LIB}/bash/completion/vagrant.sh"
 source "${LIB}/bash/completion/maven.sh"
 
+# GRC configs & aliasing
+source "${LIB}/grc/env.sh"
 
 # rvm settings
 source "${LIB}/rvm/env.sh"
