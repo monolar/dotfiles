@@ -38,6 +38,7 @@ source "${LIB}/bash/completion/npm.sh"
 source "${LIB}/bash/completion/bower.sh"
 source "${LIB}/bash/completion/vagrant.sh"
 source "${LIB}/bash/completion/maven.sh"
+source "${LIB}/bash/completion/gem.sh"
 
 # GRC configs & aliasing
 source "${LIB}/grc/env.sh"
