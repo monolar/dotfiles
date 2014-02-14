@@ -90,6 +90,7 @@ EXEC 01;38;5;140
 *Puppetfile      01;38;5;137
 *Puppetfile.lock 01;38;5;138
 *Guardfile       01;38;5;137
+*Brewfile        01;38;5;137
 *Vagrantfile     01;38;5;137
 *README          01;38;5;137
 *README.txt      01;38;5;137

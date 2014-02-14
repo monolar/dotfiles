@@ -1,0 +1,9 @@
+update
+
+tap homebrew/dupes
+
+install grc
+install z
+install coreutils
+
+# doctor
