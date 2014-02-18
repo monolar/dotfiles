@@ -3,7 +3,7 @@
 # Enable grc support
 source "${BREW_DIR}/etc/grc.bashrc"
 
-### grc aliases ##
+### custom grc aliases ##
 
 # curl
 alias curl='colourify curl'
