@@ -85,8 +85,6 @@ EXEC 01;38;5;140
 *Makefile        01;38;5;137
 *Rakefile        01;38;5;137
 *Capfile         01;38;5;137
-*Gemfile         01;38;5;137
-*Gemfile.lock    01;38;5;138
 *Puppetfile      01;38;5;137
 *Puppetfile.lock 01;38;5;138
 *Guardfile       01;38;5;137
@@ -102,6 +100,15 @@ EXEC 01;38;5;140
 # GIT
 .git            01;38;5;75
 *.gitignore     01;38;5;75
+
+# RVM
+.ruby-version   01;38;5;89
+.ruby-gemset    01;38;5;89
+
+# BUNDLER
+*Gemfile         01;38;5;137
+*Gemfile.lock    01;38;5;138
+*.gemspec        01;38;5;138
 
 # Code
 .rb             00;38;5;215
