@@ -31,7 +31,7 @@ PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Python
-PATH="${BREW_DIR}/share/python3.2:$PATH"
+#PATH="${BREW_DIR}/share/python3.2:$PATH"
 #PATH="${BREW_DIR}/share/python:$PATH"
 
 # Y60

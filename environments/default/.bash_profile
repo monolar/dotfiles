@@ -24,6 +24,12 @@ source "${LIB}/git/env.sh"
 # Other user settings
 source "${LIB}/bash/user.sh"
 
+# Java setting
+source "${LIB}/java/env.sh"
+
+# Maven setting
+source "${LIB}/maven/env.sh"
+
 # Android SDK Settings
 source "${LIB}/android/env.sh"
 
@@ -50,3 +56,5 @@ source "${LIB}/rvm/env.sh"
 
 # Load our prompt
 source "${LIB}/bash/prompt.sh"
+
+ulimit -S -n 65535

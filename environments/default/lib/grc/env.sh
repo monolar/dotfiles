@@ -12,4 +12,4 @@ alias curl='colourify curl'
 alias mount='colourify mount'
 
 # bundle
-alias bundle='colourify bundle'
+alias cbundle='colourify bundle'
