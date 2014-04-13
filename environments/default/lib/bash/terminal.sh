@@ -24,9 +24,6 @@ export GREP_OPTIONS="--color=auto --exclude=\*.svn\* --exclude=\*.git\* --exclud
 
 ### MISC ###
 
-# nimrod
-PATH="$(brew --prefix nimrod)/libexec/bin:$PATH"
-
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
 

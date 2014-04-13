@@ -18,16 +18,16 @@ source "${LIB}/bash/terminal.sh"
 # Aliasses
 source "${LIB}/bash/alias.sh"
 
-# git
+# Git Settings
 source "${LIB}/git/env.sh"
 
 # Other user settings
 source "${LIB}/bash/user.sh"
 
-# Java setting
+# Java Setting
 source "${LIB}/java/env.sh"
 
-# Maven setting
+# Maven Settings
 source "${LIB}/maven/env.sh"
 
 # Android SDK Settings
@@ -35,6 +35,9 @@ source "${LIB}/android/env.sh"
 
 # NPM Settings
 source "${LIB}/npm/env.sh"
+
+# NIMROD Settings
+source "${LIB}/nimrod/env.sh"
 
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
