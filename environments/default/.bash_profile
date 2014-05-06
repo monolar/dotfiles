@@ -50,6 +50,7 @@ source "${LIB}/bash/completion/maven.sh"
 source "${LIB}/bash/completion/gem.sh"
 source "${LIB}/bash/completion/bundle.sh"
 source "${LIB}/bash/completion/ruby.sh"
+source "${LIB}/bash/completion/nimrod.sh"
 
 # GRC configs & aliasing
 source "${LIB}/grc/env.sh"
