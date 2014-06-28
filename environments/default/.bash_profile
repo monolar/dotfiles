@@ -52,6 +52,7 @@ source "${LIB}/bash/completion/bundle.sh"
 source "${LIB}/bash/completion/ruby.sh"
 source "${LIB}/bash/completion/nimrod.sh"
 source "${LIB}/bash/completion/android.sh"
+source "${LIB}/bash/completion/yeoman-generators.sh"
 
 # GRC configs & aliasing
 source "${LIB}/grc/env.sh"
