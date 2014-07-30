@@ -39,6 +39,9 @@ source "${LIB}/npm/env.sh"
 # NIMROD Settings
 source "${LIB}/nimrod/env.sh"
 
+# GOLANG Settings
+source "${LIB}/golang/env.sh"
+
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
 source "${LIB}/bash/completion/rake.sh"
