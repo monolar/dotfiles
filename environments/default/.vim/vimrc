@@ -1,7 +1,38 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+"Plugin 'Lokaltog/vim-powerline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-bufferline'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nosami/Omnisharp'
+Plugin 'tpope/vim-dispatch'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+
+let g:bufferline_echo = 0
+
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+filetype plugin indent on
+
 set modeline
 set encoding=utf-8
 syntax enable
 set number
+set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
 
 " enable filetype plugins
 filetype plugin on
@@ -10,20 +41,26 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+color railscasts
+
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
+set ruler
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set laststatus=2
+"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
 " Be smart when using tabs
 set smarttab
 set noerrorbells
-set nocompatible
+set novisualbell
 set ai
 set si
 set cindent
@@ -31,9 +68,9 @@ set mouse=a
 set nowrap
 set incsearch
 set showmatch
-set mat=5
+set mat=2
 set wrap
-set hls
+set hlsearch
 set cul
 set wrapscan
 set sol
@@ -46,19 +83,12 @@ set title
 set ignorecase
 set smartcase
 
-execute pathogen#infect()
+hi CursorLine cterm=NONE term=NONE
+
+"if has("gui_running")
+    set guioptions-=T
+    set guioptions+=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+"endif
 set t_Co=256
-
-set rtp+=~/.vim/bundle/powerline/bindings/vim
-
-"python << EOF
-"import os
-"import sys
-"import vim
-"for p in sys.path:
-"    if os.path.isdir(p):
-"        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-"EOF
-"
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"inoremap <Nul> <C-x><C-o>
