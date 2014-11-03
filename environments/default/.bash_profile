@@ -18,6 +18,9 @@ source "${LIB}/bash/terminal.sh"
 # Aliasses
 source "${LIB}/bash/alias.sh"
 
+# Tmux
+source "${LIB}/tmux/env.sh"
+
 # Git Settings
 source "${LIB}/git/env.sh"
 
