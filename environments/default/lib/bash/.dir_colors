@@ -28,6 +28,7 @@ TERM kon
 TERM kterm
 TERM gnome
 TERM konsole
+TERM xterm-256color
 
 EIGHTBIT 1
 
