@@ -39,8 +39,8 @@ source "${LIB}/android/env.sh"
 # NPM Settings
 source "${LIB}/npm/env.sh"
 
-# NIMROD Settings
-source "${LIB}/nimrod/env.sh"
+# NIM Settings
+source "${LIB}/nim/env.sh"
 
 # GOLANG Settings
 source "${LIB}/golang/env.sh"

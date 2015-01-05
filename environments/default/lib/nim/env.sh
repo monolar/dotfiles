@@ -1,19 +1,19 @@
 # Nimrod itself
-PATH="/opt/nimrod/bin:$PATH"
+PATH="/opt/nim/bin:$PATH"
 
 # Babel package manager
-PATH="~/.babel/bin:$PATH"
+PATH="~/.nimble/bin:$PATH"
 
 update_nimrod() {
-  echo "updating nimrod..."
-  cd ~/git/Nimrod
+  echo "updating nim..."
+  cd ~/git/Nim
   git pull
   cd csources
   git pull
   sh build.sh
   cd ..
-  bin/nimrod c koch
+  bin/nim c koch
   ./koch boot -d:release
-  echo "done building nimrod"
+  echo "done building nim"
   echo "install via 'sudo ./koch install /opt'"
 }
