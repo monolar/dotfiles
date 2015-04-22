@@ -56,7 +56,7 @@ source "${LIB}/bash/completion/maven.sh"
 source "${LIB}/bash/completion/gem.sh"
 source "${LIB}/bash/completion/bundle.sh"
 source "${LIB}/bash/completion/ruby.sh"
-source "${LIB}/bash/completion/nimrod.sh"
+source "${LIB}/bash/completion/nim.sh"
 source "${LIB}/bash/completion/android.sh"
 source "${LIB}/bash/completion/yeoman-generators.sh"
 

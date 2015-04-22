@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Bash completion for the Nimrod programming language (http://nimrod-lang.org)
+# Bash completion for the nim programming language (http://nim-lang.org)
 # based on the tutorial at
 # http://www.debian-administration.org/article/317/An_introduction_to_bash_completion_part_2.
 
 # Pass as first parameter the word to complete and replace nim|tmpl files.
-_nimrod_complete_compilable_files()
+_nim_complete_compilable_files()
 {
     local cur
     cur="$1"
@@ -22,7 +22,7 @@ _nimrod_complete_compilable_files()
 }
 
 # Use this to expand compilation commands.
-_nimrod_expand_compile_switches()
+_nim_expand_compile_switches()
 {
     local cur opts
     cur="${COMP_WORDS[COMP_CWORD]}"
@@ -48,7 +48,7 @@ _nimrod_expand_compile_switches()
     COMPREPLY+=($(compgen -W "${opts}" -- ${cur}))
 }
 
-_nimrod_complete_idetools()
+_nim_complete_idetools()
 {
     local cur prev opts
     cur="${COMP_WORDS[COMP_CWORD]}"
@@ -61,11 +61,11 @@ _nimrod_complete_idetools()
     case "${prev}" in
         --track|--track:)
             # Pass the current parameter without the prefix to complete file.
-            _nimrod_complete_compilable_files "${prev:8}${cur}"
+            _nim_complete_compilable_files "${prev:8}${cur}"
             ;;
         --trackDirty|--trackDirty:)
             # Pass the current parameter without the prefix to complete file.
-            _nimrod_complete_compilable_files "${prev:13}${cur}"
+            _nim_complete_compilable_files "${prev:13}${cur}"
             ;;
         *)
             COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
@@ -73,14 +73,14 @@ _nimrod_complete_idetools()
     esac
 }
 
-_nimrod_complete_serve()
+_nim_complete_serve()
 {
     local opts
     opts="--server.type: --server.port: --server.address:"
     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 }
 
-_nimrod_compiler_base()
+_nim_compiler_base()
 {
     local cur prev opts
     COMREPLY=()
@@ -121,10 +121,10 @@ _nimrod_compiler_base()
                     fi
                     ;;
                 idetools)
-                    _nimrod_complete_idetools
+                    _nim_complete_idetools
                     ;;
                 serve)
-                    _nimrod_complete_serve
+                    _nim_complete_serve
                     ;;
                 rst2html|rst2tex)
                     # Allow the index switch plus txt/rst files.
@@ -148,11 +148,11 @@ _nimrod_compiler_base()
                     ;;
                 *)
                     # By default add command completion for compilable files.
-                    _nimrod_complete_compilable_files "${cur}"
+                    _nim_complete_compilable_files "${cur}"
                     if test -z "${cur}"; then
-                        _nimrod_expand_compile_switches
+                        _nim_expand_compile_switches
                     elif [[ ${cur} == -* ]] ; then
-                        _nimrod_expand_compile_switches
+                        _nim_expand_compile_switches
                     fi
             esac
             ;;
@@ -162,6 +162,6 @@ _nimrod_compiler_base()
 }
 # How does this work?
 #COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
-complete -F _nimrod_compiler_base nimrod
+complete -F _nim_compiler_base nim
 
 # vim:expandtab tabstop=4 shiftwidth=4 syntax=sh

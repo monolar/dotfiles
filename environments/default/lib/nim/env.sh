@@ -4,7 +4,7 @@ PATH=/opt/nim/bin:$PATH
 # Nimble package manager
 PATH=~/.nimble/bin:$PATH
 
-update_nimrod() {
+update_nim() {
   echo "updating nim..."
   cd ~/git/Nim
   if [ -d "csources" ]
