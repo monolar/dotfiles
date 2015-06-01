@@ -19,7 +19,9 @@ update_nim() {
     git checkout ${1}
   fi
 
-  sh build.sh
+  git clone --depth 1 git://github.com/nim-lang/csources
+  cd csources && sh build.sh
+  cd ..
 
   echo "done building nim"
   echo "install via 'sudo ./koch install /opt'"
