@@ -1,4 +1,4 @@
-# Nimrod itself
+# Nim language
 PATH=/opt/nim/bin:$PATH
 
 # Nimble package manager
@@ -22,6 +22,8 @@ update_nim() {
   git clone --depth 1 git://github.com/nim-lang/csources
   cd csources && sh build.sh
   cd ..
+  bin/nim c koch
+  ./koch boot -d:release
 
   echo "done building nim"
   echo "install via 'sudo ./koch install /opt'"
