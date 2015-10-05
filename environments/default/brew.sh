@@ -46,7 +46,7 @@ brew install gawk
 brew install reattach-to-user-namespace
 brew install cmake --with-completion
 brew install vim --override-system-vi
-brew install tmux ranger htop python wget the_silver_searcher ctags
+brew install tmux ranger htop wget the_silver_searcher ctags
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
