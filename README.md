@@ -20,4 +20,4 @@
 
 ### tmux
 
-* Install tmux plugins via `Prefix + I` (`CRTL+B` is default)
+* Install tmux plugins via `Prefix + I` (`CRTL+B` is tmux default but we are using `CTRL-A`)
