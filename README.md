@@ -10,6 +10,7 @@
  <pre>
   ln -s `<your/checkout/path>`/environments/default/.bash_profile ~/.bash_profile
   ln -s `<your/checkout/path>`/environments/default/.gitconfig ~/.gitconfig
+  ln -s ~/dev/dotfiles/environments/default/lib/git/.global_gitignore ~/.global_gitignore
   ln -s `<your/checkout/path>`/environments/default/.grc ~/.grc
   ln -s `<your/checkout/path>`/environments/default/.vim ~/.vim
   ln -s `<your/checkout/path>`/environments/default/.tmux/ ~/.tmux
