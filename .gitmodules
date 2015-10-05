@@ -1,3 +1,6 @@
 [submodule "environments/default/.tmux/plugins/tpm"]
 	path = environments/default/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "environments/default/.vim/bundle/vim-settings"]
+	path = environments/default/.vim/bundle/vim-settings
+	url = https://github.com/monolar/vim-settings.git
