@@ -50,6 +50,7 @@ brew install tmux ranger htop wget the_silver_searcher ctags
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
+brew tap caskroom/versions
 
 # Install cask applications
 echo "installing Cask Applications..."
@@ -66,7 +67,7 @@ brew install Caskroom/cask/adium
 brew install Caskroom/cask/java
 
 ## Commercial Cask Applications (may work as trial)
-brew install Caskroom/cask/sublime-text # actually installs sublime text 2 instead of 3
+brew cask install sublime-text3
 brew install Caskroom/cask/tower # installs tower2
 brew install Caskroom/cask/sizeup
 
