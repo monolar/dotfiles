@@ -34,15 +34,18 @@ brew install bash
 brew install bash-completion
 brew install coreutils
 brew install binutils
+brew install git --with-brewed-curl --with-brewed-openssl --with-brewed-svn --with-gettext
 brew install grep --with-default-names
 brew install z
 brew install gpg
 brew install grc
 brew install findutils
 brew install reattach-to-user-namespace
+brew install cmake --with-completion
 brew install vim --override-system-vi
 brew install tmux
 brew install ranger
+brew install htop
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
@@ -51,7 +54,6 @@ brew install caskroom/cask/brew-cask
 echo "installing Cask Applications..."
 
 brew install Caskroom/cask/easysimbl
-
 echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
 open ~/Applications/EasySIMBL.app
 

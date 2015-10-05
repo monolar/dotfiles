@@ -17,7 +17,7 @@
   ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
  </pre>
 
-* initiate git submodules (tbd) for vim-settings and tpm
+* initiate git submodules (`git submodule update --init --recursive`) for vim-settings and tpm
 
 ### tmux
 
@@ -25,4 +25,6 @@
 
 ### vim
 
-* Install all plugins (tbd)
+* Install all plugins by calling `:PluginInstall` from within vim (may complain because of missing plugins, like e.g. color-scheme)
+
+* YouCompleteMe may need compilation: `./install.py --clang-completer` (may take quite some time)
