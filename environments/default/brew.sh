@@ -30,9 +30,11 @@ brew upgrade
 
 # All "normal" brew packages...
 echo "... brewing ..."
+brew install bash
+brew install bash-completion
 brew install coreutils
 brew install binutils
-brew install grep
+brew install grep --with-default-names
 brew install z
 brew install gpg
 brew install grc
@@ -40,6 +42,7 @@ brew install findutils
 brew install reattach-to-user-namespace
 brew install vim --override-system-vi
 brew install tmux
+brew install ranger
 
 # Install brew cask
 brew install caskroom/cask/brew-cask

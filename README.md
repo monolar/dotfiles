@@ -16,3 +16,8 @@
   ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
  </pre>
 
+* initiate git submodules (tbd)
+
+### tmux
+
+* Install tmux plugins via `Prefix + I` (`CRTL+B` is default)
