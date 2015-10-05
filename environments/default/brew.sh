@@ -38,6 +38,7 @@ brew install gpg
 brew install grc
 brew install findutils
 brew install reattach-to-user-namespace
+brew install vim --override-system-vi
 brew install tmux
 
 # Install brew cask
