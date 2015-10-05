@@ -1,2 +1,6 @@
 **/.netrwhist
 **/.tmux/sidebar/directory_widths.txt
+environments/default/.tmux/plugins/tmux-battery
+environments/default/.tmux/plugins/tmux-pain-control
+environments/default/.tmux/plugins/tmux-sensible
+environments/default/.tmux/plugins/tmux-sidebar
