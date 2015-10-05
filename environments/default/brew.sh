@@ -65,6 +65,7 @@ brew install Caskroom/cask/google-chrome
 brew install Caskroom/cask/slack
 brew install Caskroom/cask/adium
 brew install Caskroom/cask/java
+brew install Caskroom/cask/mysqlworkbench
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
