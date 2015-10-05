@@ -8,12 +8,12 @@
 
 * Link the environment selected (e.g. `environments/default`)  via:
  <pre>
-  ln -s `<your/checkout/path>`/environments/default/.bash_profile ~/.bash_profile
-  ln -s `<your/checkout/path>`/environments/default/.gitconfig ~/.gitconfig
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.bash_profile ~/.bash_profile
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.gitconfig ~/.gitconfig
   ln -s ~/dev/dotfiles/environments/default/lib/git/.global_gitignore ~/.global_gitignore
-  ln -s `<your/checkout/path>`/environments/default/.grc ~/.grc
-  ln -s `<your/checkout/path>`/environments/default/.vim ~/.vim
-  ln -s `<your/checkout/path>`/environments/default/.tmux/ ~/.tmux
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.grc ~/.grc
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.vim ~/.vim
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.tmux/ ~/.tmux
   ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
  </pre>
 
