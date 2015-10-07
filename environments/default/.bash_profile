@@ -70,4 +70,4 @@ source "${LIB}/rvm/env.sh"
 # Load our prompt
 source "${LIB}/bash/prompt.sh"
 
-ulimit -S -n 65535
+#ulimit -S -n 65535
