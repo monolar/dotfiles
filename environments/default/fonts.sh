@@ -15,4 +15,9 @@ git clone git@github.com:monolar/vim-settings.git
 cd vim-settings
 cp "Monaco for Powerline.otf" ~/Library/Fonts
 
+cd ..
+git clone https://github.com/abertsch/Menlo-for-Powerline.git
+cd Menlo-for-Powerline
+cp *.ttf ~/Library/Fonts
+
 echo "...done"

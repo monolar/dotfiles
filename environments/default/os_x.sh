@@ -2,7 +2,7 @@
 
 PROG=${0##*/}
 
-# OS X Yosemite only...
+# OS X Yosemite+ only...
 if ! [[ $(sw_vers -productVersion) =~ ^10\.1.\..+ ]]; then
   echo "$PROG script is intended only for OS X versions 10.10.0 and up"
   exit 1
@@ -18,6 +18,9 @@ sudo -v
 
 # Set Dark Theme
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
+# CTRL+Command+option - T switches dark mode on/off
+sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 # Set Highlight Color
 defaults write "Apple Global Domain" AppleHighlightColor "1.000000 0.874510 0.701961" 
@@ -49,3 +52,4 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -boolean true
 # Show status bar.
 defaults write com.apple.finder ShowStatusBar -boolean true
 
+echo "You may need to at least log out and log in again for changes to take effect!"
