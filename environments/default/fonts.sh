@@ -3,7 +3,7 @@
 echo "installing fonts..."
 
 cd
-mkdir dev
+mkdir -p dev
 cd dev
 
 git clone git@github.com:powerline/fonts.git
