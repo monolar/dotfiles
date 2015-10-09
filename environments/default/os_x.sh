@@ -75,6 +75,9 @@ defaults write com.apple.screencapture disable-shadow -boolean true
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Standard function keys
+defaults write com.apple.keyboard.fnState -boolean true
+
 ############
 ## Finder ##
 
