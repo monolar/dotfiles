@@ -41,12 +41,29 @@ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableTheme
 # Set Highlight Color
 defaults write "Apple Global Domain" AppleHighlightColor "1.000000 0.874510 0.701961" 
 
-## Dock
+##########
+## Dock ##
 
 # Reduce transparency in OS X.
 defaults write com.apple.universalaccess reduceTransparency -boolean true
 
-## Desktop & ScreenSaver
+# Dock is on the left
+defaults write com.apple.Dock orientation -string left
+
+# Dock autohides
+defaults write com.apple.Dock autohide -boolean true
+
+# Mission Control corners
+defaults write com.apple.dock wvous-bl-corner -integer 3
+defaults write com.apple.dock wvous-br-corner -integer 4
+defaults write com.apple.dock wvous-tl-corner -integer 2
+defaults write com.apple.dock wvous-tr-corner -integer 12
+
+# Dock changes require a Dock restart
+killall Dock
+
+###########################
+## Desktop & ScreenSaver ##
 
 # Disable shadows on screen captures (default: not set).
 defaults write com.apple.screencapture disable-shadow -boolean true
@@ -84,4 +101,4 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo "You may need to at least log out and log in again for changes to take effect!"
+echo "You may need to at least log out and log in again for all changes to take effect!"
