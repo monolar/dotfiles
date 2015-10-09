@@ -22,7 +22,8 @@ function hs {
 eval `dircolors ${LIB}/bash/.dir_colors`
 
 # Grep Options
-export GREP_OPTIONS="--color=auto --exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.log\*"
+# TODO: replace with script or alias...
+# export GREP_OPTIONS="--color=auto --exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.log\*"
 
 ### MISC ###
 
