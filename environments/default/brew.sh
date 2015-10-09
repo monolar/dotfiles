@@ -66,6 +66,9 @@ brew install Caskroom/cask/slack
 brew install Caskroom/cask/adium
 brew install Caskroom/cask/java
 brew install Caskroom/cask/mysqlworkbench
+brew install Caskroom/cask/github-desktop
+brew install Caskroom/cask/sequel-pro
+brew install Caskroom/cask/atom
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
@@ -78,5 +81,3 @@ brew cleanup
 # Install RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable
-
-
