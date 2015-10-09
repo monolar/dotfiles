@@ -101,6 +101,7 @@ EXEC 01;38;5;140
 # GIT
 .git            01;38;5;75
 *.gitignore     01;38;5;75
+*.gitmodules    01;38;5;75
 
 # RVM
 .ruby-version   01;38;5;89
