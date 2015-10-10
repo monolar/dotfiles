@@ -70,6 +70,8 @@ brew install Caskroom/cask/github-desktop
 brew install Caskroom/cask/sequel-pro
 brew install Caskroom/cask/atom
 brew install Caskroom/cask/jewelrybox
+brew install Caskroom/cask/cocoarestclient
+brew install Caskroom/cask/macdown
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
