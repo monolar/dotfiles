@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
+# TODO: Be more defensively
 
 # Ask for the administrator password upfront.
 sudo -v
 
-# XCode sdk
-xcode-select --install
-
 # Keep-alive: update existing `sudo` time stamp until `brew.sh` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# XCode sdk
+xcode-select --install
 
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -19,6 +20,9 @@ brew doctor
 
 echo "tapping dupes..."
 brew tap homebrew/dupes
+
+echo "tapping crystal"
+brew tap manastech/crystal
 
 # Make sure we’re using the latest Homebrew.
 echo "updating brews..."
@@ -49,6 +53,8 @@ brew install vim --override-system-vi
 brew install tmux ranger htop wget the_silver_searcher ctags stow
 brew install mysql node
 
+brew install crystal-lang
+
 # Install brew cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
@@ -74,6 +80,7 @@ brew install Caskroom/cask/jewelrybox
 brew install Caskroom/cask/cocoarestclient
 brew install Caskroom/cask/macdown
 brew install Caskroom/cask/skype
+brew install Caskroom/cask/virtualbox
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
