@@ -47,7 +47,7 @@ brew install reattach-to-user-namespace
 brew install cmake --with-completion
 brew install vim --override-system-vi
 brew install tmux ranger htop wget the_silver_searcher ctags stow
-brew install mysql
+brew install mysql node
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
