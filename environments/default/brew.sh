@@ -3,11 +3,16 @@
 # Install command-line tools using Homebrew.
 # TODO: Be more defensively
 
-# Ask for the administrator password upfront.
-sudo -v
+function _get_root_permissions() {
+  echo "getting root permissions once at the start..."
+  # Ask for the administrator password upfront.
+  sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `brew.sh` has finished.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+  # Keep-alive: update existing `sudo` time stamp until `brew.sh` has finished.
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+}
+
+_get_root_permissions
 
 # XCode sdk
 xcode-select --install
@@ -18,22 +23,36 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "checking brew..."
 brew doctor
 
-echo "tapping dupes..."
-brew tap homebrew/dupes
+function _taps() {
+  taps=(
+    caskroom/cask
+    caskroom/versions
+    homebrew/dupes
+    homebrew/versions
+    manastech/crystal
+    martido/brew-graph
+  )
+  for i in "${taps[@]}"
+  do
+   :
+   echo "tapping '${i}' ..."
+   brew tap $i
+  done
+}
 
-echo "tapping crystal"
-brew tap manastech/crystal
+_taps
 
 # Make sure we’re using the latest Homebrew.
-echo "updating brews..."
-brew update
+#echo "updating brews..."
+#brew update
 
 # Upgrade any already-installed formulae.
-echo "upgrading brews..."
-brew upgrade
+#echo "upgrading brews..."
+#brew upgrade
 
 # All "normal" brew packages...
 echo "... brewing ..."
+brew install brew-graph
 brew install bash
 brew install bash-completion
 brew install coreutils
@@ -55,12 +74,8 @@ brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz
 
-brew tap martido/brew-graph
-brew install brew-graph
-
 # Install brew cask
 brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
 
 # Install cask applications
 echo "installing Cask Applications..."
