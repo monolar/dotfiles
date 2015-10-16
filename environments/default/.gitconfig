@@ -8,7 +8,7 @@
 	status = auto
 	ui = true
 [core]
-	editor = mate -w
+	editor = subl -n -w
 	excludesfile = ~/.global_gitignore
 [mergetool]
 	keepBackup = true
