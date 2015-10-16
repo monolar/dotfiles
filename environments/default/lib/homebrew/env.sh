@@ -9,7 +9,7 @@ MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 brew-pgraph () {
-  brew graph | dot -Tpng | open -f -a /Applications/Preview.app
+  brew graph --installed | dot -Tpng | open -f -a /Applications/Preview.app
 }
 
 function _brew_check_installed () {
