@@ -51,7 +51,7 @@ brew install reattach-to-user-namespace
 brew install cmake --with-completion
 brew install vim --override-system-vi
 brew install tmux ranger htop wget the_silver_searcher ctags stow
-brew install mysql node
+brew install mysql node tree tig
 
 brew install crystal-lang
 
@@ -81,6 +81,12 @@ brew install Caskroom/cask/cocoarestclient
 brew install Caskroom/cask/macdown
 brew install Caskroom/cask/skype
 brew install Caskroom/cask/virtualbox
+brew install Caskroom/cask/imageoptim
+brew install Caskroom/cask/licecap
+brew install Caskroom/cask/gimp
+brew install Caskroom/cask/onyx
+brew install Caskroom/cask/secrets
+brew install Caskroom/cask/firefox
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
