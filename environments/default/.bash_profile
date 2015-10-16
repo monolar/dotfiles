@@ -71,3 +71,6 @@ source "${LIB}/rvm/env.sh"
 source "${LIB}/bash/prompt.sh"
 
 #ulimit -S -n 65535
+
+# Load your secrets or project specific settings
+[[ -e ~/.my_profile ]] && source ~/.my_profile
