@@ -107,6 +107,7 @@ brew install Caskroom/cask/onyx
 brew install Caskroom/cask/secrets
 brew install Caskroom/cask/firefox
 brew install Caskroom/cask/spectacle
+brew install Caskroom/cask/moom
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
