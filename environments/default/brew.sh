@@ -73,6 +73,7 @@ brew install tmux ranger htop wget the_silver_searcher ctags stow
 brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz
+brew install nginx
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
@@ -105,11 +106,11 @@ brew install Caskroom/cask/gimp
 brew install Caskroom/cask/onyx
 brew install Caskroom/cask/secrets
 brew install Caskroom/cask/firefox
+brew install Caskroom/cask/spectacle
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
 brew install Caskroom/cask/tower # installs tower2
-brew install Caskroom/cask/sizeup
 
 echo "Cleaning Brews..."
 brew cleanup
