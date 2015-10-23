@@ -54,9 +54,9 @@ defaults write com.apple.Dock orientation -string left
 defaults write com.apple.Dock autohide -boolean true
 
 # Mission Control corners
-defaults write com.apple.dock wvous-bl-corner -integer 3
+defaults write com.apple.dock wvous-bl-corner -integer 2
 defaults write com.apple.dock wvous-br-corner -integer 4
-defaults write com.apple.dock wvous-tl-corner -integer 2
+defaults write com.apple.dock wvous-tl-corner -integer 3
 defaults write com.apple.dock wvous-tr-corner -integer 12
 
 # Dock changes require a Dock restart
@@ -80,6 +80,9 @@ defaults write com.apple.keyboard.fnState -boolean true
 
 ############
 ## Finder ##
+
+# Don't warn about emptying the trash
+defaults.write com.apple.finder WarnOnEmptyTrash -boolean false
 
 # New windows show home directory.
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
