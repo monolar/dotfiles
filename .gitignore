@@ -4,6 +4,9 @@ environments/default/.tmux/plugins/tmux-battery
 environments/default/.tmux/plugins/tmux-pain-control
 environments/default/.tmux/plugins/tmux-sensible
 environments/default/.tmux/plugins/tmux-sidebar
+environments/default/.tmux/plugins/tmux-online-status
+environments/default/.tmux/plugins/tmux-prefix-highlight
+environments/default/.tmux/plugins/vim-tmux-focus-events
 environments/default/.vim/bundle/YouCompleteMe
 environments/default/.vim/bundle/vim-tmux-navigator
 environments/default/.vim/bundle/vim-surround
