@@ -41,3 +41,4 @@ environments/default/.vim/bundle/dash.vim
 environments/default/.vim/bundle/ctrlp.vim
 environments/default/.vim/bundle/cmdalias.vim
 environments/default/.tmux/plugins/tmux-scroll-copy-mode
+environments/default/.tmux/plugins/tmux-copycat
