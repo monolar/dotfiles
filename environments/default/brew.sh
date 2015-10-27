@@ -85,6 +85,7 @@ brew install Caskroom/cask/easysimbl
 echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
 open ~/Applications/EasySIMBL.app
 
+brew install Caskroom/cask/xquartz
 brew install Caskroom/cask/iterm2
 brew install Caskroom/cask/mou
 brew install Caskroom/cask/google-chrome
@@ -108,6 +109,8 @@ brew install Caskroom/cask/secrets
 brew install Caskroom/cask/firefox
 brew install Caskroom/cask/spectacle
 brew install Caskroom/cask/moom
+brew install Caskroom/cask/cakebrew
+brew install Caskroom/cask/fontforge
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
