@@ -53,7 +53,7 @@ _taps
 # All "normal" brew packages...
 echo "... brewing ..."
 brew install brew-graph
-brew install bash
+brew install bash fish
 brew install bash-completion
 brew install coreutils
 brew install binutils
@@ -73,7 +73,10 @@ brew install tmux ranger htop wget the_silver_searcher ctags stow
 brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz
-brew install nginx
+brew install nginx httpie
+brew install go haskell-stack multirust rust nimrod
+brew install zopfli watch thefuck
+brew install the_platinum_searcher
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
