@@ -12,3 +12,5 @@ alias la="ls --color=auto -laF"
 
 # git shortcut aliasses
 alias lg="git log --decorate --graph --oneline"
+
+alias prettyjson='python -m json.tool'
