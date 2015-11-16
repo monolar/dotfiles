@@ -25,6 +25,7 @@ brew doctor
 
 function _taps() {
   taps=(
+    codeclimate/formulae
     caskroom/cask
     caskroom/versions
     homebrew/dupes
@@ -74,9 +75,16 @@ brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz
 brew install nginx httpie
-brew install go haskell-stack multirust rust nimrod
+brew install go haskell-stack multirust nimrod
 brew install zopfli watch thefuck
 brew install the_platinum_searcher
+brew install since pup pstree
+brew install neo4j mercurial v8 haproxy midnight-commander
+brew install logtalk
+
+
+brew install codeclimate
+# brew install docker
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
@@ -114,6 +122,7 @@ brew install Caskroom/cask/spectacle
 brew install Caskroom/cask/moom
 brew install Caskroom/cask/cakebrew
 brew install Caskroom/cask/fontforge
+brew install Caskroom/cask/dockertoolbox
 
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
