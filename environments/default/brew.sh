@@ -113,20 +113,22 @@ brew install Caskroom/cask/macdown
 brew install Caskroom/cask/skype
 brew install Caskroom/cask/virtualbox
 brew install Caskroom/cask/imageoptim
-brew install Caskroom/cask/licecap
-brew install Caskroom/cask/gimp
-brew install Caskroom/cask/onyx
-brew install Caskroom/cask/secrets
+brew install Caskroom/cask/licecap # Record animated gifs
+brew install Caskroom/cask/gimp # image manipulation
+brew install Caskroom/cask/onyx # OS X maintenance and power tools
+brew install Caskroom/cask/secrets # OS X settings panel
 brew install Caskroom/cask/firefox
-brew install Caskroom/cask/spectacle
+brew install Caskroom/cask/spectacle # manage windows and their positions
 brew install Caskroom/cask/moom
 brew install Caskroom/cask/cakebrew
 brew install Caskroom/cask/fontforge
 brew install Caskroom/cask/dockertoolbox
-
+brew install Caskroom/cask/blender # i like modelling and do papercraft stuff.
+brew install Caskroom/cask/steam # i am a gamer
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
 brew install Caskroom/cask/tower # installs tower2
+brew install Caskroom/cask/libreoffice # productivity stuff you cannot without
 
 echo "Cleaning Brews..."
 brew cleanup
