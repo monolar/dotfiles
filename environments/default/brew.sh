@@ -125,6 +125,7 @@ brew install Caskroom/cask/fontforge
 brew install Caskroom/cask/dockertoolbox
 brew install Caskroom/cask/blender # i like modelling and do papercraft stuff.
 brew install Caskroom/cask/steam # i am a gamer
+brew install Caskroom/cask/vlc
 ## Commercial Cask Applications (may work as trial)
 brew cask install sublime-text3
 brew install Caskroom/cask/tower # installs tower2
