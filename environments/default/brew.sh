@@ -82,9 +82,11 @@ brew install since pup pstree
 brew install neo4j mercurial v8 haproxy midnight-commander
 brew install logtalk
 
-
+# Docker
+brew install docker-machine
 brew install codeclimate
-# brew install docker
+brew install docker
+brew install docker-compose
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
@@ -130,6 +132,7 @@ brew install Caskroom/cask/vlc
 brew cask install sublime-text3
 brew install Caskroom/cask/tower # installs tower2
 brew install Caskroom/cask/libreoffice # productivity stuff you cannot without
+brew install Caskroom/cask/kitematic # Docker
 
 echo "Cleaning Brews..."
 brew cleanup

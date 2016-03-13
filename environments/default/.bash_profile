@@ -67,6 +67,9 @@ source "${LIB}/grc/env.sh"
 # rvm settings
 source "${LIB}/rvm/env.sh"
 
+# docker
+source "${LIB}/docker/env.sh"
+
 # Load our prompt
 source "${LIB}/bash/prompt.sh"
 
