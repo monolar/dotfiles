@@ -14,3 +14,6 @@ alias la="ls --color=auto -laF"
 alias lg="git log --decorate --graph --oneline"
 
 alias prettyjson='python -m json.tool'
+
+# use thefuck
+eval $(thefuck --alias)
