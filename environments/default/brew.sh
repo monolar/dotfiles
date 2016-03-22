@@ -134,6 +134,8 @@ brew install Caskroom/cask/tower # installs tower2
 brew install Caskroom/cask/libreoffice # productivity stuff you cannot without
 brew install Caskroom/cask/kitematic # Docker
 brew install Caskroom/cask/disk-inventory-x # file system overview
+brew install Caskroom/cask/dbvisualizer
+
 echo "Cleaning Brews..."
 brew cleanup
 
