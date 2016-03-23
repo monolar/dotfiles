@@ -136,6 +136,9 @@ brew install Caskroom/cask/kitematic # Docker
 brew install Caskroom/cask/disk-inventory-x # file system overview
 brew install Caskroom/cask/dbvisualizer
 
+# Quicklook plugins
+brew install Caskroom/cask/qlmarkdown # markdown
+
 echo "Cleaning Brews..."
 brew cleanup
 
