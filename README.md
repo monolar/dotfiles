@@ -9,6 +9,7 @@
 * Link the environment selected (e.g. `environments/default`)  via:
  <pre>
   ln -s `&lt;your/checkout/path&gt;`/environments/default/.bash_profile ~/.bash_profile
+  ln -s `&lt;your/checkout/path&gt;`/environments/default/.bash_sessions_disable ~/.bash_sessions_disable
   ln -s `&lt;your/checkout/path&gt;`/environments/default/.gitconfig ~/.gitconfig
   ln -s ~/dev/dotfiles/environments/default/lib/git/.global_gitignore ~/.global_gitignore
   ln -s `&lt;your/checkout/path&gt;`/environments/default/.grc ~/.grc
