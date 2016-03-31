@@ -17,3 +17,6 @@ alias prettyjson='python -m json.tool'
 
 # use thefuck
 eval $(thefuck --alias)
+
+# start screensaver shortcut
+alias sc="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
