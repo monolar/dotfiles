@@ -135,6 +135,7 @@ brew install Caskroom/cask/libreoffice # productivity stuff you cannot without
 brew install Caskroom/cask/kitematic # Docker
 brew install Caskroom/cask/disk-inventory-x # file system overview
 brew install Caskroom/cask/dbvisualizer
+brew install Caskroom/cask/sourcetree # another git client
 
 # Quicklook plugins
 brew install Caskroom/cask/qlmarkdown # markdown
