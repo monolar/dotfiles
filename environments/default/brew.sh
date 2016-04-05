@@ -81,6 +81,7 @@ brew install the_platinum_searcher
 brew install since pup pstree
 brew install neo4j mercurial v8 haproxy midnight-commander
 brew install logtalk
+brew install qcachegrind # for profile data visualisation
 
 # Docker
 brew install docker-machine
