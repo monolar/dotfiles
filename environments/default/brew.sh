@@ -32,6 +32,7 @@ function _taps() {
     homebrew/versions
     manastech/crystal
     martido/brew-graph
+    adymo/kde
   )
   for i in "${taps[@]}"
   do
@@ -82,6 +83,8 @@ brew install since pup pstree
 brew install neo4j mercurial v8 haproxy midnight-commander
 brew install logtalk
 brew install qcachegrind # for profile data visualisation
+brew install qt --with-d-bus --with-qt3support
+brew install adymo/kde/massif-visualizer # for memory profile visualisation
 
 # Docker
 brew install docker-machine

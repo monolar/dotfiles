@@ -12,6 +12,9 @@ LIB="${DIR}/lib"
 # Load Homebrew specific profile settings.
 source "${LIB}/homebrew/env.sh"
 
+# Loading additional KDE Environment settings
+source "${LIB}/homebrew/kde.sh"
+
 # Load general bash settings.
 source "${LIB}/bash/terminal.sh"
 
@@ -27,7 +30,7 @@ source "${LIB}/git/env.sh"
 # Other user settings
 source "${LIB}/bash/user.sh"
 
-# Java Setting
+# Java Settings
 source "${LIB}/java/env.sh"
 
 # Maven Settings
