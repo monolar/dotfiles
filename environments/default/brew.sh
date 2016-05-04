@@ -85,6 +85,8 @@ brew install logtalk
 brew install qcachegrind # for profile data visualisation
 brew install qt --with-d-bus --with-qt3support
 brew install adymo/kde/massif-visualizer # for memory profile visualisation
+brew install watchman # watch fs changes
+brew install memcache-top
 
 # Docker
 brew install docker-machine
@@ -140,6 +142,7 @@ brew install Caskroom/cask/kitematic # Docker
 brew install Caskroom/cask/disk-inventory-x # file system overview
 brew install Caskroom/cask/dbvisualizer
 brew install Caskroom/cask/sourcetree # another git client
+brew install Caskroom/cask/rdm # redis ui client
 
 # Quicklook plugins
 brew install Caskroom/cask/qlmarkdown # markdown
