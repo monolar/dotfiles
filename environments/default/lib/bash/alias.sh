@@ -8,7 +8,8 @@ alias vless="$(brew --prefix vim)/share/vim/vim74/macros/less.sh"
 
 # ls aliasses
 alias ls="ls --color=auto"
-alias la="ls --color=auto -laF"
+# alias la="ls --color=auto -laF"
+alias la="grc -es ls -la --color=always"
 
 # git shortcut aliasses
 alias lg="git log --decorate --graph --oneline"
