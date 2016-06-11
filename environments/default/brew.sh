@@ -32,6 +32,8 @@ function _taps() {
     homebrew/versions
     manastech/crystal
     martido/brew-graph
+    homebrew/science
+    homebrew/python
     adymo/kde
   )
   for i in "${taps[@]}"
@@ -70,11 +72,12 @@ brew install gnu-tar --with-default-names
 brew install gawk
 brew install reattach-to-user-namespace
 brew install cmake --with-completion
+brew install python
 brew install vim --override-system-vi
 brew install tmux ranger htop wget the_silver_searcher ctags stow
 brew install mysql node tree tig
 brew install crystal-lang
-brew install graphviz
+brew install graphviz --with-librsvg --with-x11
 brew install nginx httpie
 brew install go haskell-stack multirust nimrod
 brew install zopfli watch thefuck
@@ -84,6 +87,21 @@ brew install neo4j mercurial v8 haproxy midnight-commander
 brew install logtalk
 brew install qcachegrind # for profile data visualisation
 brew install qt --with-d-bus --with-qt3support
+
+# install PIL, imagemagick, graphviz and other
+# image generating stuff
+brew install libtiff libjpeg webp little-cms2
+
+brew install imagemagick --with-fftw --with-librsvg --with-x11
+brew install cairo
+
+# Install brew cask
+brew install caskroom/cask/brew-cask
+brew install Caskroom/cask/xquartz
+
+brew install py2cairo # this will ask you to download xquartz and install it
+brew install pyqt
+
 brew install adymo/kde/massif-visualizer # for memory profile visualisation
 brew install watchman # watch fs changes
 brew install memcache-top
@@ -94,9 +112,6 @@ brew install codeclimate
 brew install docker
 brew install docker-compose
 
-# Install brew cask
-brew install caskroom/cask/brew-cask
-
 # Install cask applications
 echo "installing Cask Applications..."
 
@@ -104,23 +119,23 @@ brew install Caskroom/cask/easysimbl
 echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
 open ~/Applications/EasySIMBL.app
 
-brew install Caskroom/cask/xquartz
-brew install Caskroom/cask/iterm2
-brew install Caskroom/cask/mou
-brew install Caskroom/cask/google-chrome
-brew install Caskroom/cask/slack
-brew install Caskroom/cask/adium
+brew install Caskroom/cask/iterm2 # Terminal alternative
+brew install Caskroom/cask/mou # Markdown Editor
+brew install Caskroom/cask/google-chrome # Browser
+brew install Caskroom/cask/slack # Messaging
+brew install Caskroom/cask/adium # Chat client
 brew install Caskroom/cask/java
+brew install gradle # Java build tool like maven
 brew install Caskroom/cask/mysqlworkbench
-brew install Caskroom/cask/github-desktop
-brew install Caskroom/cask/sequel-pro
-brew install Caskroom/cask/atom
-brew install Caskroom/cask/jewelrybox
+brew install Caskroom/cask/github-desktop # Github ui client
+brew install Caskroom/cask/sequel-pro # Sql workbench
+brew install Caskroom/cask/atom # Editor
+brew install Caskroom/cask/jewelrybox # RVM UI
 brew install Caskroom/cask/cocoarestclient
-brew install Caskroom/cask/macdown
+brew install Caskroom/cask/macdown # Another Markdown editor
 brew install Caskroom/cask/skype
 brew install Caskroom/cask/virtualbox
-brew install Caskroom/cask/imageoptim
+brew install Caskroom/cask/imageoptim # Image Optimizer
 brew install Caskroom/cask/licecap # Record animated gifs
 brew install Caskroom/cask/gimp # image manipulation
 brew install Caskroom/cask/onyx # OS X maintenance and power tools
@@ -128,14 +143,14 @@ brew install Caskroom/cask/secrets # OS X settings panel
 brew install Caskroom/cask/firefox
 brew install Caskroom/cask/spectacle # manage windows and their positions
 brew install Caskroom/cask/moom
-brew install Caskroom/cask/cakebrew
+brew install Caskroom/cask/cakebrew # Brew UI client
 brew install Caskroom/cask/fontforge
 brew install Caskroom/cask/dockertoolbox
 brew install Caskroom/cask/blender # i like modelling and do papercraft stuff.
 brew install Caskroom/cask/steam # i am a gamer
 brew install Caskroom/cask/vlc
 ## Commercial Cask Applications (may work as trial)
-brew cask install sublime-text3
+brew install Caskroom/versions/sublime-text3
 brew install Caskroom/cask/tower # installs tower2
 brew install Caskroom/cask/libreoffice # productivity stuff you cannot without
 brew install Caskroom/cask/kitematic # Docker
@@ -143,6 +158,7 @@ brew install Caskroom/cask/disk-inventory-x # file system overview
 brew install Caskroom/cask/dbvisualizer
 brew install Caskroom/cask/sourcetree # another git client
 brew install Caskroom/cask/rdm # redis ui client
+brew install Caskroom/cask/clipy # A Clipboard extension
 
 # Quicklook plugins
 brew install Caskroom/cask/qlmarkdown # markdown
