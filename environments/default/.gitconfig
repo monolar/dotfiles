@@ -8,7 +8,7 @@
 	status = auto
 	ui = true
 [core]
-	editor = subl -n -w
+	editor = vim
 	excludesfile = ~/.global_gitignore
 [mergetool]
 	keepBackup = true
@@ -18,3 +18,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[aliases]
+	pure          = pull --rebase
