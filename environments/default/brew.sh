@@ -79,7 +79,7 @@ brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz --with-librsvg --with-x11
 brew install nginx httpie
-brew install go haskell-stack multirust nimrod
+brew install go haskell-stack nimrod
 brew install zopfli watch thefuck
 brew install the_platinum_searcher
 brew install since pup pstree
@@ -87,6 +87,8 @@ brew install neo4j mercurial v8 haproxy midnight-commander
 brew install logtalk
 brew install qcachegrind # for profile data visualisation
 brew install qt --with-d-bus --with-qt3support
+brew install gifsicle # for optimizing GIFs
+brew install pick # for picking stuff from big lists
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff

@@ -48,6 +48,9 @@ source "${LIB}/nim/env.sh"
 # GOLANG Settings
 source "${LIB}/golang/env.sh"
 
+# RUST Settings
+source "${LIB}/rust/env.sh"
+
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
 source "${LIB}/bash/completion/rake.sh"
