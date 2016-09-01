@@ -80,15 +80,19 @@ brew install crystal-lang
 brew install graphviz --with-librsvg --with-x11
 brew install nginx httpie
 brew install go haskell-stack nimrod
-brew install zopfli watch thefuck
+brew install zopfli # compression algorithm
+brew install watch thefuck
 brew install the_platinum_searcher
 brew install since pup pstree
-brew install neo4j mercurial v8 haproxy midnight-commander
-brew install logtalk
+brew install neo4j # Graph Database
+brew install mercurial # Source code versioning system
+brew install v8 haproxy midnight-commander
+brew install logtalk # prolog inspired programming language
 brew install qcachegrind # for profile data visualisation
 brew install qt --with-d-bus --with-qt3support
 brew install gifsicle # for optimizing GIFs
 brew install pick # for picking stuff from big lists
+brew install cloc # source code line counter
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -96,6 +100,8 @@ brew install libtiff libjpeg webp little-cms2
 
 brew install imagemagick --with-fftw --with-librsvg --with-x11
 brew install cairo
+
+brew install Caskroom/cask/intellij-idea
 
 # Install brew cask
 brew install caskroom/cask/brew-cask
@@ -144,10 +150,8 @@ brew install Caskroom/cask/onyx # OS X maintenance and power tools
 brew install Caskroom/cask/secrets # OS X settings panel
 brew install Caskroom/cask/firefox
 brew install Caskroom/cask/spectacle # manage windows and their positions
-brew install Caskroom/cask/moom
 brew install Caskroom/cask/cakebrew # Brew UI client
 brew install Caskroom/cask/fontforge
-brew install Caskroom/cask/dockertoolbox
 brew install Caskroom/cask/blender # i like modelling and do papercraft stuff.
 brew install Caskroom/cask/steam # i am a gamer
 brew install Caskroom/cask/vlc
