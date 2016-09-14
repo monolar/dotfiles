@@ -58,7 +58,7 @@ _taps
 echo "... brewing ..."
 brew install brew-graph
 brew install bash fish
-brew install bash-completion
+brew install bash-completion2
 brew install coreutils
 brew install binutils
 brew install git --with-brewed-curl --with-brewed-openssl --with-brewed-svn --with-gettext
