@@ -93,6 +93,7 @@ brew install qt --with-d-bus --with-qt3support
 brew install gifsicle # for optimizing GIFs
 brew install pick # for picking stuff from big lists
 brew install cloc # source code line counter
+brew install pv # Pipeline
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
