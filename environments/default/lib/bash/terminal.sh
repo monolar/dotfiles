@@ -10,7 +10,7 @@ export LC_TYPE=de_DE.UTF-8
 export EDITOR=vim
 
 # History management
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
