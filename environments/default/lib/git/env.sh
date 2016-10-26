@@ -24,3 +24,6 @@ git_prompt() {
         echo -e " ($ref$(parse_git_dirty)$(parse_git_stash))"
     fi
 }
+
+# git shortcut aliasses
+alias lg="git log --graph --pretty='format:%C(yellow)%h %C(green)%<(18)%an %C(blue bold)%<(22)%ar   %Creset%s'"

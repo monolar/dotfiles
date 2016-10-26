@@ -1,23 +1,27 @@
 [user]
-	name = Andreas Marr
-	email = monolar@monolar.org
+  name = Andreas Marr
+  email = monolar@monolar.org
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
 [core]
-	editor = vim
-	excludesfile = ~/.global_gitignore
+  editor = vim
+  excludesfile = ~/.global_gitignore
 [mergetool]
-	keepBackup = true
+  keepBackup = true
+[fetch]
+  tags = true
+  prune = true
 [push]
-	default = simple
-	followTags = true
+  default = simple
+  followTags = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
-[aliases]
-	pure          = pull --rebase
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[alias]
+  prune-tags = !git tag -l | xargs git tag -d && git fetch -t
+  pure = pull --rebase
