@@ -11,9 +11,6 @@ alias ls="ls --color=auto"
 # alias la="ls --color=auto -laF"
 alias la="colourify -es --colour=auto -- ls -la --color=always --time-style=long-iso --human-readable"
 
-# git shortcut aliasses
-alias lg="git log --decorate --graph --oneline"
-
 alias prettyjson='python -m json.tool'
 
 # use thefuck
