@@ -74,7 +74,10 @@ brew install reattach-to-user-namespace
 brew install cmake --with-completion
 brew install python
 brew install vim --override-system-vi
-brew install tmux ranger htop wget the_silver_searcher ctags stow
+brew install tmux ranger htop wget
+brew install the_silver_searcher # faster search
+brew install fzf # command line fuzzy finder
+brew install ctags stow
 brew install mysql node tree tig
 brew install crystal-lang
 brew install graphviz --with-librsvg --with-x11
