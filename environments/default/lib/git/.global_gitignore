@@ -2,6 +2,7 @@
 .gemtags
 .AppleDouble
 .LSOverride
+.tags1
 
 **/.DS_Store
 
@@ -15,3 +16,4 @@ Icon
 .Spotlight-V100
 .Trashes
 
+.idea
