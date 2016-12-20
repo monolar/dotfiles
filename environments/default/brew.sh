@@ -35,6 +35,7 @@ function _taps() {
     homebrew/science
     homebrew/python
     adymo/kde
+    thoughtbot/formulae
   )
   for i in "${taps[@]}"
   do
@@ -62,6 +63,7 @@ brew install bash-completion2
 brew install coreutils
 brew install binutils
 brew install git --with-brewed-curl --with-brewed-openssl --with-brewed-svn --with-gettext
+brew install gitsh
 brew install grep --with-default-names
 brew install z
 brew install sqlite
