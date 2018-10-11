@@ -51,6 +51,12 @@ source "${LIB}/golang/env.sh"
 # RUST Settings
 source "${LIB}/rust/env.sh"
 
+# PYTHON Settings
+source "${LIB}/python/env.sh"
+
+# MYSQL Settings
+source "${LIB}/mysql/env.sh"
+
 # Completion scripts
 source "${LIB}/bash/completion/base.sh"
 source "${LIB}/bash/completion/rake.sh"

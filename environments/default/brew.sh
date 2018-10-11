@@ -83,6 +83,7 @@ brew install fzf # command line fuzzy finder
 brew install ctags
 brew install stow
 brew install mysql
+brew install mysql-client
 brew install node
 brew install tree
 brew install tig
@@ -109,6 +110,7 @@ brew install gifsicle # for optimizing GIFs
 brew install pick # for picking stuff from big lists
 brew install cloc # source code line counter
 brew install pv # Pipeline
+brew install zlib
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -135,13 +137,14 @@ brew install docker
 brew install docker-compose
 
 echo "installing Cask Applications..."
+brew cask install docker
 
 # Java8 and neo4j
 brew cask install java8
 brew install neo4j # Graph Database
 
-brew cask install intellij-idea
-brew cask install pycharm
+brew cask install intellij-idea-ce
+brew cask install pycharm-ce
 
 # brew install Caskroom/cask/easysimbl
 # echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
@@ -186,6 +189,7 @@ brew cask install dbvisualizer
 # brew cask install sourcetree # another git client
 # brew cask install rdm # redis ui client
 brew cask install clipy # A Clipboard extension
+brew cask install tunnelblock # A VPN Client
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
