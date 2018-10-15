@@ -35,11 +35,8 @@ sudo pmset -a standbydelay 86400
 # Set Dark Theme
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
-# CTRL+Command+option - T switches dark mode on/off
-sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
-
 # Set Highlight Color
-defaults write "Apple Global Domain" AppleHighlightColor "1.000000 0.874510 0.701961" 
+defaults write "Apple Global Domain" AppleHighlightColor "1.000000 0.874510 0.701961"
 
 ##########
 ## Dock ##
@@ -76,7 +73,8 @@ defaults write com.apple.screencapture disable-shadow -boolean true
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Standard function keys
-defaults write com.apple.keyboard.fnState -boolean true
+# TODO Does this still exist?
+# defaults write com.apple.keyboard.fnState -boolean true
 
 ############
 ## Finder ##
