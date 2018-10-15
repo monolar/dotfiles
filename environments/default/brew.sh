@@ -45,6 +45,7 @@ function _taps() {
 
 _taps
 
+# TODO brew cask upgrade
 echo "Do you wish to upgrade all packages?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -190,6 +191,7 @@ brew cask install dbvisualizer
 # brew cask install rdm # redis ui client
 brew cask install clipy # A Clipboard extension
 brew cask install tunnelblock # A VPN Client
+brew cask install postman
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
