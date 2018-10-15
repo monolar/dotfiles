@@ -195,6 +195,7 @@ brew cask install postman
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
+brew cask install quicklook-json
 
 echo "Cleaning Brews..."
 brew cleanup
