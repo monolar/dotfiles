@@ -182,7 +182,8 @@ brew cask install steam # i am a gamer
 brew cask install vlc
 ## Commercial Cask Applications (may work as trial)
 # brew cask install sublime-text3
-# brew cask install tower # installs tower2
+brew cask install tower # tower2 git ui client
+brew cask install versions # svn ui client
 brew cask install libreoffice # productivity stuff you cannot without
 # brew install Caskroom/cask/kitematic # Docker
 brew cask install disk-inventory-x # file system overview
