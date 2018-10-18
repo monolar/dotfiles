@@ -63,6 +63,7 @@ brew install coreutils
 brew install binutils
 brew install git --with-curl --with-openssl
 brew install git-sh
+brew install subversion
 brew install grep --with-default-names
 brew install z
 brew install sqlite
@@ -83,7 +84,7 @@ brew install the_silver_searcher # faster search
 brew install fzf # command line fuzzy finder
 brew install ctags
 brew install stow
-brew install mysql
+brew install mysql@5.7 # We are not yet using mysql 8
 brew install mysql-client
 brew install node
 brew install tree
@@ -111,7 +112,11 @@ brew install gifsicle # for optimizing GIFs
 brew install pick # for picking stuff from big lists
 brew install cloc # source code line counter
 brew install pv # Pipeline
+brew install jq # Command line json processor
+brew install jsonpp # Command line json pretty printer
 brew install zlib
+brew install redis
+brew install memcached
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -161,6 +166,9 @@ brew install gradle # Java build tool like maven
 brew cask install mysqlworkbench
 brew cask install github # Github ui client
 brew cask install sequel-pro # Sql workbench
+brew cask install tableplus # another sql workbench (also supports REDIS!!)
+brew cask install datagrip # Jetbrains' take on sql workbench
+brew cask install teamsql # Electron app for collaborative sql editing
 brew cask install atom # Editor
 brew cask install visual-studio-code
 brew cask install jewelrybox # RVM UI
@@ -188,11 +196,12 @@ brew cask install libreoffice # productivity stuff you cannot without
 # brew install Caskroom/cask/kitematic # Docker
 brew cask install disk-inventory-x # file system overview
 brew cask install dbvisualizer
-# brew cask install sourcetree # another git client
+brew cask install sourcetree # another git client
 # brew cask install rdm # redis ui client
 brew cask install clipy # A Clipboard extension
-brew cask install tunnelblock # A VPN Client
+brew cask install tunnelblick # A VPN Client
 brew cask install postman
+brew cask install servpane # convenient way to start/stop brew services from menubar
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
