@@ -4,7 +4,7 @@ pman () {
 }
 
 # Vim in less mode alias
-alias vless="$(brew --prefix vim)/share/vim/vim74/macros/less.sh"
+alias vless="$(brew --prefix vim)/share/vim/vim81/macros/less.sh"
 
 # ls aliasses
 alias ls="ls --color=auto"
