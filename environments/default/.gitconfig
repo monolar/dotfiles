@@ -1,6 +1,6 @@
 [user]
-  name = Andreas Marr
-  email = monolar@monolar.org
+	name = Andreas Marr
+	email = monolar@monolar.org
 [color]
   branch = auto
   diff = auto
@@ -19,9 +19,10 @@
   default = simple
   followTags = true
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [alias]
   prune-tags = !git tag -l | xargs git tag -d && git fetch -t
   pure = pull --rebase
