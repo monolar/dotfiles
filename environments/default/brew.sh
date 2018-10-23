@@ -202,6 +202,12 @@ brew cask install clipy # A Clipboard extension
 brew cask install tunnelblick # A VPN Client
 brew cask install postman
 brew cask install servpane # convenient way to start/stop brew services from menubar
+brew cask install inkscape
+brew cask install fantastical # iCal alternative
+brew cask install gitkraken # some git ui
+brew cask install deltawalker # diff/merge ui tool
+brew cask install beyond-compare # diff/merge ui tool
+brew cask install kaleidoscope # diff/merge ui tool
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
