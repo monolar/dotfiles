@@ -48,7 +48,7 @@ function __promptline_ps1 {
   slice_prefix="${d_bg}${sep}${d_fg}${d_bg}${space}" slice_suffix="$space${d_sep_fg}" slice_joiner="${d_fg}${d_bg}${alt_sep}${space}" slice_empty_prefix="${d_fg}${d_bg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
   # section "d" slices
-  __promptline_wrapper "$(__promptline_rvm_current)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
+  __promptline_wrapper "$(__promptline_rvm_pyenv_current)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "warn" header
   slice_prefix="${warn_bg}${sep}${warn_fg}${warn_bg}${space}" slice_suffix="$space${warn_sep_fg}" slice_joiner="${warn_fg}${warn_bg}${alt_sep}${space}" slice_empty_prefix="${warn_fg}${warn_bg}${space}"
@@ -60,8 +60,9 @@ function __promptline_ps1 {
   # close sections
   printf "%s" "${reset_bg}${sep}$reset$space"
 }
-function __promptline_rvm_current {
-  printf "%s" "$(current_rvm)"
+function __promptline_rvm_pyenv_current {
+  # printf "%s" "py:$(current_pyenv_virtualenv) | rb:$(current_rvm)"
+  printf "%s" "$(current_pyenv_virtualenv)"
   return
 }
 
