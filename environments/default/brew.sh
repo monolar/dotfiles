@@ -75,6 +75,9 @@ brew install gawk
 brew install reattach-to-user-namespace
 brew install cmake --with-completion
 brew install python
+brew install pyenv
+brew install pyenv-virtualenv
+# brew install pyenv-virtualenvwrapper
 brew install vim --override-system-vi
 brew install tmux
 brew install ranger
@@ -208,6 +211,11 @@ brew cask install gitkraken # some git ui
 brew cask install deltawalker # diff/merge ui tool
 brew cask install beyond-compare # diff/merge ui tool
 brew cask install kaleidoscope # diff/merge ui tool
+brew cask install insomnia # REST ui Testing tool
+brew cask install soapui # REST ui Testing workbench
+brew caks install paw # api tool
+brew cask install vyprvpn
+brew cask install kite # weird community autocomplete
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
