@@ -42,7 +42,7 @@ defaults write "Apple Global Domain" AppleHighlightColor "1.000000 0.874510 0.70
 ## Dock ##
 
 # Reduce transparency in OS X.
-defaults write com.apple.universalaccess reduceTransparency -boolean true
+# defaults write com.apple.universalaccess reduceTransparency -boolean true
 
 # Dock is on the left
 defaults write com.apple.Dock orientation -string left
@@ -80,7 +80,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 ## Finder ##
 
 # Don't warn about emptying the trash
-defaults.write com.apple.finder WarnOnEmptyTrash -boolean false
+defaults write com.apple.finder WarnOnEmptyTrash -boolean false
 
 # New windows show home directory.
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
