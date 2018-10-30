@@ -213,7 +213,7 @@ brew cask install beyond-compare # diff/merge ui tool
 brew cask install kaleidoscope # diff/merge ui tool
 brew cask install insomnia # REST ui Testing tool
 brew cask install soapui # REST ui Testing workbench
-brew caks install paw # api tool
+brew cask install paw # api tool
 brew cask install vyprvpn
 brew cask install kite # weird community autocomplete
 
