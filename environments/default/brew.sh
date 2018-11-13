@@ -78,6 +78,7 @@ brew install python
 brew install pyenv
 brew install pyenv-virtualenv
 # brew install pyenv-virtualenvwrapper
+brew install pipenv
 brew install vim --override-system-vi
 brew install tmux
 brew install ranger
@@ -144,6 +145,8 @@ brew install memcache-top
 # brew install codeclimate
 brew install docker
 brew install docker-compose
+
+brew install packer # Hashicorps meta-take on building
 
 echo "installing Cask Applications..."
 brew cask install docker
