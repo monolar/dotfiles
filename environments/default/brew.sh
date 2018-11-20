@@ -219,6 +219,7 @@ brew cask install soapui # REST ui Testing workbench
 brew cask install paw # api tool
 brew cask install vyprvpn
 brew cask install kite # weird community autocomplete
+brew cask install whatsapp # yeah, i know
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
