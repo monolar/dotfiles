@@ -58,20 +58,7 @@ source "${LIB}/python/env.sh"
 source "${LIB}/mysql/env.sh"
 
 # Completion scripts
-source "${LIB}/bash/completion/base.sh"
-source "${LIB}/bash/completion/rake.sh"
-source "${LIB}/bash/completion/capistrano.sh"
-source "${LIB}/bash/completion/npm.sh"
-source "${LIB}/bash/completion/bower.sh"
-source "${LIB}/bash/completion/vagrant.sh"
-source "${LIB}/bash/completion/maven.sh"
-source "${LIB}/bash/completion/gem.sh"
-source "${LIB}/bash/completion/bundle.sh"
-source "${LIB}/bash/completion/ruby.sh"
-source "${LIB}/bash/completion/nim.sh"
-source "${LIB}/bash/completion/android.sh"
-source "${LIB}/bash/completion/yeoman-generators.sh"
-source "${LIB}/bash/completion/grunt.sh"
+source "${LIB}/completion/env.sh"
 
 # GRC configs & aliasing
 source "${LIB}/grc/env.sh"
