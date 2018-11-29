@@ -20,4 +20,9 @@ git clone https://github.com/abertsch/Menlo-for-Powerline.git
 cd Menlo-for-Powerline
 cp *.ttf ~/Library/Fonts
 
+cd ..
+git clone https://github.com/tonsky/FiraCode.git
+cd FiraCode/distr/otf
+cp *.otf ~/Library/Fonts
+
 echo "...done"
