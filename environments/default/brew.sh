@@ -121,6 +121,7 @@ brew install jsonpp # Command line json pretty printer
 brew install zlib
 brew install redis
 brew install memcached
+brew install ripgrep # rust powered grep/ag alternative
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -220,6 +221,7 @@ brew cask install paw # api tool
 brew cask install vyprvpn
 brew cask install kite # weird community autocomplete
 brew cask install whatsapp # yeah, i know
+brew cask install alacritty # gpu based terminal emulator
 
 # Quicklook plugins
 brew cask install qlmarkdown # markdown
