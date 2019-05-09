@@ -122,6 +122,8 @@ brew install zlib
 brew install redis
 brew install memcached
 brew install ripgrep # rust powered grep/ag alternative
+brew install lcov
+brew install csvkit # nice tools for csv operations
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -140,6 +142,9 @@ brew install pyqt
 # brew install adymo/kde/massif-visualizer # for memory profile visualisation
 brew install watchman # watch fs changes
 brew install memcache-top
+
+# touchbar
+brew cask install pock
 
 # Docker
 # brew install docker-machine
