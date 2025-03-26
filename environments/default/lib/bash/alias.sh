@@ -1,10 +1,10 @@
 # man pages
-pman () {
-    man -t "${1}" | open -f -a /Applications/Preview.app
+pman() {
+    mandoc -T pdf "$(/usr/bin/man -w $@)" | open -fa Preview
 }
 
 # Vim in less mode alias
-alias vless="$(brew --prefix vim)/share/vim/vim81/macros/less.sh"
+alias vless="$(brew --prefix vim)/share/vim/vim91/macros/less.sh"
 
 # ls aliasses
 alias ls="ls --color=auto"
@@ -13,8 +13,5 @@ alias la="colourify -es --colour=auto -- ls -la --color=always --time-style=long
 
 alias prettyjson='python -m json.tool'
 
-# use thefuck
-eval $(thefuck --alias)
-
 # start screensaver shortcut
-alias sc="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+alias sc="open -a ScreenSaverEngine.app"

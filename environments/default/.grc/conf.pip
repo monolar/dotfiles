@@ -1,0 +1,9 @@
+# Successfully installed ...
+regexp=^(Successfully installed).*$
+colours=bold green, default, default
+count=more
+=====
+# Requirement already satisfied
+regexp=^(Requirement already satisfied).*$
+colours=bold blue, default, default 
+count=more

@@ -34,9 +34,9 @@ eval `dircolors ${LIB}/bash/.dir_colors`
 #PATH="${BREW_DIR}/share/python3.2:$PATH"
 #PATH="${BREW_DIR}/share/python:$PATH"
 
-# Y60
-#export PATH=/artcom/bin:$PATH
-
 # npm
 # PATH="${BREW_DIR}/lib/node_modules:$PATH"
 # PATH="${BREW_DIR}/share/npm/bin:$PATH"
+
+# findutils
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"

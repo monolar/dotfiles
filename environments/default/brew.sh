@@ -77,14 +77,17 @@ brew install cmake --with-completion
 brew install python
 brew install pyenv
 brew install pyenv-virtualenv
+brew install --cask google-cloud-sdk
 # brew install pyenv-virtualenvwrapper
 brew install pipenv
 brew install vim --override-system-vi
+brew install vimpager
 brew install tmux
 brew install ranger
 brew install htop
 brew install pstree
 brew install the_silver_searcher # faster search
+brew install fd # find alternative (gitignore aware)
 brew install fzf # command line fuzzy finder
 brew install ctags
 brew install stow
@@ -103,8 +106,8 @@ brew install go
 brew install haskell-stack nimrod
 brew install zopfli # compression algorithm
 brew install watch
-brew install thefuck
-brew install the_platinum_searcher
+# brew install thefuck
+# brew install the_platinum_searcher
 brew install since
 brew install pup
 brew install mercurial # Source code versioning system
@@ -124,6 +127,8 @@ brew install memcached
 brew install ripgrep # rust powered grep/ag alternative
 brew install lcov
 brew install csvkit # nice tools for csv operations
+brew install bat # cat for markdown
+brew install ghostty # a nice terminal emulator
 
 # install PIL, imagemagick, graphviz and other
 # image generating stuff
@@ -141,6 +146,7 @@ brew install pyqt
 
 # brew install adymo/kde/massif-visualizer # for memory profile visualisation
 brew install watchman # watch fs changes
+brew install watchexec # watch fs changes (gitignore aware)
 brew install memcache-top
 
 # touchbar

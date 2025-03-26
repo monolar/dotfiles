@@ -42,6 +42,9 @@ source "${LIB}/android/env.sh"
 # NPM Settings
 source "${LIB}/npm/env.sh"
 
+# NVM Setting
+source "${LIB}/nvm/env.sh"
+
 # NIM Settings
 source "${LIB}/nim/env.sh"
 
@@ -61,10 +64,10 @@ source "${LIB}/mysql/env.sh"
 source "${LIB}/completion/env.sh"
 
 # GRC configs & aliasing
-source "${LIB}/grc/env.sh"
+# source "${LIB}/grc/env.sh"
 
 # rvm settings
-source "${LIB}/rvm/env.sh"
+# source "${LIB}/rvm/env.sh"
 
 # docker
 source "${LIB}/docker/env.sh"
@@ -76,3 +79,7 @@ source "${LIB}/bash/prompt.sh"
 
 # Load your secrets or project specific settings
 [[ -e ~/.my_profile ]] && source ~/.my_profile
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+. "$HOME/Library/Preferences/KDE/share/../bin/env"
