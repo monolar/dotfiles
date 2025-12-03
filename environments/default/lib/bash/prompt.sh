@@ -62,7 +62,7 @@ function __promptline_ps1 {
 }
 function __promptline_rvm_pyenv_current {
   # printf "%s" "py:$(current_pyenv_virtualenv) | rb:$(current_rvm)"
-  printf "%s" "$(current_pyenv_virtualenv)"
+  # printf "%s" "$(current_pyenv_virtualenv)"
   return
 }
 

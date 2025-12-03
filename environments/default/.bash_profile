@@ -43,7 +43,7 @@ source "${LIB}/android/env.sh"
 source "${LIB}/npm/env.sh"
 
 # NVM Setting
-source "${LIB}/nvm/env.sh"
+# source "${LIB}/nvm/env.sh"
 
 # NIM Settings
 source "${LIB}/nim/env.sh"
@@ -55,7 +55,7 @@ source "${LIB}/golang/env.sh"
 source "${LIB}/rust/env.sh"
 
 # PYTHON Settings
-source "${LIB}/python/env.sh"
+# source "${LIB}/python/env.sh"
 
 # MYSQL Settings
 source "${LIB}/mysql/env.sh"
