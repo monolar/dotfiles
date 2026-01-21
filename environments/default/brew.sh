@@ -17,7 +17,7 @@ _get_root_permissions
 which -s brew
 if [[ $? != 0 ]] ; then
     echo "* install homebrew ..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     echo "* update homebrew ..."
     brew update
