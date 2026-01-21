@@ -91,7 +91,7 @@ brew install fd # find alternative (gitignore aware)
 brew install fzf # command line fuzzy finder
 brew install ctags
 brew install stow
-brew install mysql@5.7 # We are not yet using mysql 8
+brew install mysql@8.0
 brew install mysql-client
 brew install node
 brew install tree
@@ -163,8 +163,8 @@ brew install packer # Hashicorps meta-take on building
 echo "installing Cask Applications..."
 brew install --cask docker
 
-# Java8 and neo4j
-brew install --cask java8
+# Java and neo4j
+brew install --cask temurin8
 brew install neo4j # Graph Database
 
 brew install --cask intellij-idea-ce
@@ -179,11 +179,11 @@ brew install --cask iterm2 # Terminal alternative
 # brew install --cask google-chrome # Browser
 brew install --cask slack # Messaging
 brew install --cask adium # Chat client
-brew install --cask java
+brew install --cask temurin
 brew install gradle # Java build tool like maven
 brew install --cask mysqlworkbench
 brew install --cask github # Github ui client
-brew install --cask sequel-pro # Sql workbench
+brew install --cask sequel-ace # Sql workbench
 brew install --cask tableplus # another sql workbench (also supports REDIS!!)
 brew install --cask datagrip # Jetbrains' take on sql workbench
 brew install --cask teamsql # Electron app for collaborative sql editing
@@ -201,7 +201,6 @@ brew install --cask onyx # OS X maintenance and power tools
 # brew install --cask secrets # OS X settings panel
 brew install --cask firefox
 brew install --cask spectacle # manage windows and their positions
-brew install --cask cakebrew # Brew UI client
 brew install --cask fontforge
 brew install --cask blender # i like modelling and do papercraft stuff.
 brew install --cask steam # i am a gamer
