@@ -61,19 +61,19 @@ brew install bash fish
 brew install bash-completion2
 brew install coreutils
 brew install binutils
-brew install git --with-curl --with-openssl
+brew install git
 brew install git-sh
 brew install subversion
-brew install grep --with-default-names
+brew install grep
 brew install z
 brew install sqlite
 brew install gpg
 brew install grc
-brew install findutils --with-default-names
-brew install gnu-tar --with-default-names
+brew install findutils
+brew install gnu-tar
 brew install gawk
 brew install reattach-to-user-namespace
-brew install cmake --with-completion
+brew install cmake
 brew install python
 brew install pyenv
 brew install pyenv-virtualenv
@@ -98,12 +98,12 @@ brew install tree
 brew install tig
 brew install crystal
 brew install rust
-brew install graphviz --with-librsvg --with-x11
+brew install graphviz
 brew install nginx
 brew install httpie
 brew install wget
 brew install go
-brew install haskell-stack nimrod
+brew install stack nim
 brew install zopfli # compression algorithm
 brew install watch
 # brew install thefuck
@@ -114,7 +114,7 @@ brew install mercurial # Source code versioning system
 brew install v8 haproxy midnight-commander
 brew install logtalk # prolog inspired programming language
 brew install qcachegrind # for profile data visualisation
-brew install qt --with-d-bus --with-qt3support
+brew install qt
 brew install gifsicle # for optimizing GIFs
 brew install pick # for picking stuff from big lists
 brew install cloc # source code line counter
@@ -138,7 +138,7 @@ brew install webp
 brew install little-cms2
 
 brew install --cask xquartz
-brew install imagemagick --with-fftw --with-librsvg --with-x11
+brew install imagemagick
 brew install cairo
 
 brew install py2cairo # this will ask you to download xquartz and install it
