@@ -45,7 +45,7 @@ function _taps() {
 
 _taps
 
-# TODO brew cask upgrade
+# TODO brew upgrade --cask
 echo "Do you wish to upgrade all packages?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -137,7 +137,7 @@ brew install libjpeg
 brew install webp
 brew install little-cms2
 
-brew cask install xquartz
+brew install --cask xquartz
 brew install imagemagick --with-fftw --with-librsvg --with-x11
 brew install cairo
 
@@ -150,7 +150,7 @@ brew install watchexec # watch fs changes (gitignore aware)
 brew install memcache-top
 
 # touchbar
-brew cask install pock
+brew install --cask pock
 
 # Docker
 # brew install docker-machine
@@ -161,82 +161,82 @@ brew install docker-compose
 brew install packer # Hashicorps meta-take on building
 
 echo "installing Cask Applications..."
-brew cask install docker
+brew install --cask docker
 
 # Java8 and neo4j
-brew cask install java8
+brew install --cask java8
 brew install neo4j # Graph Database
 
-brew cask install intellij-idea-ce
-brew cask install pycharm-ce
+brew install --cask intellij-idea-ce
+brew install --cask pycharm-ce
 
 # brew install Caskroom/cask/easysimbl
 # echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
 # open ~/Applications/EasySIMBL.app
 
-brew cask install iterm2 # Terminal alternative
-# brew cask install mou # Markdown Editor
-# brew cask install google-chrome # Browser
-brew cask install slack # Messaging
-brew cask install adium # Chat client
-brew cask install java
+brew install --cask iterm2 # Terminal alternative
+# brew install --cask mou # Markdown Editor
+# brew install --cask google-chrome # Browser
+brew install --cask slack # Messaging
+brew install --cask adium # Chat client
+brew install --cask java
 brew install gradle # Java build tool like maven
-brew cask install mysqlworkbench
-brew cask install github # Github ui client
-brew cask install sequel-pro # Sql workbench
-brew cask install tableplus # another sql workbench (also supports REDIS!!)
-brew cask install datagrip # Jetbrains' take on sql workbench
-brew cask install teamsql # Electron app for collaborative sql editing
-brew cask install atom # Editor
-brew cask install visual-studio-code
-brew cask install jewelrybox # RVM UI
-brew cask install cocoarestclient
-brew cask install macdown # Another Markdown editor
-brew cask install skype
-brew cask install virtualbox
-brew cask install imageoptim # Image Optimizer
-brew cask install licecap # Record animated gifs
-brew cask install gimp # image manipulation
-brew cask install onyx # OS X maintenance and power tools
-# brew cask install secrets # OS X settings panel
-brew cask install firefox
-brew cask install spectacle # manage windows and their positions
-brew cask install cakebrew # Brew UI client
-brew cask install fontforge
-brew cask install blender # i like modelling and do papercraft stuff.
-brew cask install steam # i am a gamer
-brew cask install vlc
+brew install --cask mysqlworkbench
+brew install --cask github # Github ui client
+brew install --cask sequel-pro # Sql workbench
+brew install --cask tableplus # another sql workbench (also supports REDIS!!)
+brew install --cask datagrip # Jetbrains' take on sql workbench
+brew install --cask teamsql # Electron app for collaborative sql editing
+brew install --cask atom # Editor
+brew install --cask visual-studio-code
+brew install --cask jewelrybox # RVM UI
+brew install --cask cocoarestclient
+brew install --cask macdown # Another Markdown editor
+brew install --cask skype
+brew install --cask virtualbox
+brew install --cask imageoptim # Image Optimizer
+brew install --cask licecap # Record animated gifs
+brew install --cask gimp # image manipulation
+brew install --cask onyx # OS X maintenance and power tools
+# brew install --cask secrets # OS X settings panel
+brew install --cask firefox
+brew install --cask spectacle # manage windows and their positions
+brew install --cask cakebrew # Brew UI client
+brew install --cask fontforge
+brew install --cask blender # i like modelling and do papercraft stuff.
+brew install --cask steam # i am a gamer
+brew install --cask vlc
 ## Commercial Cask Applications (may work as trial)
-# brew cask install sublime-text3
-brew cask install tower # tower2 git ui client
-brew cask install versions # svn ui client
-brew cask install libreoffice # productivity stuff you cannot without
+# brew install --cask sublime-text3
+brew install --cask tower # tower2 git ui client
+brew install --cask versions # svn ui client
+brew install --cask libreoffice # productivity stuff you cannot without
 # brew install Caskroom/cask/kitematic # Docker
-brew cask install disk-inventory-x # file system overview
-brew cask install dbvisualizer
-brew cask install sourcetree # another git client
-# brew cask install rdm # redis ui client
-brew cask install clipy # A Clipboard extension
-brew cask install tunnelblick # A VPN Client
-brew cask install postman
-brew cask install servpane # convenient way to start/stop brew services from menubar
-brew cask install inkscape
-brew cask install fantastical # iCal alternative
-brew cask install gitkraken # some git ui
-brew cask install deltawalker # diff/merge ui tool
-brew cask install beyond-compare # diff/merge ui tool
-brew cask install kaleidoscope # diff/merge ui tool
-brew cask install insomnia # REST ui Testing tool
-brew cask install soapui # REST ui Testing workbench
-brew cask install paw # api tool
-brew cask install vyprvpn
-brew cask install kite # weird community autocomplete
-brew cask install whatsapp # yeah, i know
-brew cask install alacritty # gpu based terminal emulator
+brew install --cask disk-inventory-x # file system overview
+brew install --cask dbvisualizer
+brew install --cask sourcetree # another git client
+# brew install --cask rdm # redis ui client
+brew install --cask clipy # A Clipboard extension
+brew install --cask tunnelblick # A VPN Client
+brew install --cask postman
+brew install --cask servpane # convenient way to start/stop brew services from menubar
+brew install --cask inkscape
+brew install --cask fantastical # iCal alternative
+brew install --cask gitkraken # some git ui
+brew install --cask deltawalker # diff/merge ui tool
+brew install --cask beyond-compare # diff/merge ui tool
+brew install --cask kaleidoscope # diff/merge ui tool
+brew install --cask insomnia # REST ui Testing tool
+brew install --cask soapui # REST ui Testing workbench
+brew install --cask paw # api tool
+brew install --cask vyprvpn
+brew install --cask kite # weird community autocomplete
+brew install --cask whatsapp # yeah, i know
+brew install --cask alacritty # gpu based terminal emulator
 
 # Quicklook plugins
-brew cask install qlmarkdown # markdown
-brew cask install quicklook-json
+brew install --cask qlmarkdown # markdown
+brew install --cask quicklook-json
 
 echo "Cleaning Brews..."
 brew cleanup
