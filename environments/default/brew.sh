@@ -106,6 +106,8 @@ brew install stow
 
 # Languages and build tooling
 brew install cmake
+
+# Mainstream and current languages
 brew install python
 brew install pyenv
 brew install pyenv-virtualenv
@@ -113,15 +115,47 @@ brew install uv # new
 brew install node
 brew install go
 brew install rust
+brew install zig
+brew install lua # new
+
+# Polyglot runtime and build tooling
+brew install rbenv ruby-build
+brew install openjdk # new
+brew install gradle
+brew install v8
+brew install zlib
+
+# Functional, BEAM, and Lisp-family languages
+brew install erlang # new
+brew install elixir # new
+brew install ocaml # new
+brew install sbcl # new
+brew install guile # new
+brew install racket # new
+
+# JVM and adjacent languages
+brew install groovy # new
+brew install scala # new
+brew install kotlin # new
+
+# Native, systems, and alternative languages
 brew install crystal
 brew install nim
 brew install stack
-brew install rbenv ruby-build
+brew install mono # new
+
+# Historical and still-used languages
+brew install gcc # new; includes gfortran
+brew install fpc # new
+brew install gnu-cobol # new
+brew install tcl-tk # new
+
+# Interactive fiction and language-adjacent tools
+brew install inform # new
+
+# UI and language bindings
 brew install qt
 brew install pyqt
-brew install v8
-brew install zlib
-brew install zig
 
 # Networking, HTTP, and infrastructure
 brew install httpie
@@ -206,8 +240,11 @@ brew install --cask servpane # convenient way to start/stop brew services from m
 brew install --cask clipy # A Clipboard extension
 
 # Communication and collaboration
+brew install --cask discord # new
 brew install --cask slack # Messaging
 brew install --cask adium # Chat client
+brew install --cask telegram # new
+brew install --cask signal # new
 brew install --cask skype
 brew install --cask whatsapp # yeah, i know
 
@@ -217,14 +254,18 @@ brew install --cask libreoffice
 brew install --cask fantastical # iCal alternative
 brew install --cask macdown # Another Markdown editor
 
-# Media, design, and graphics
+# Media, design, game creation, and graphics
 brew install --cask xquartz
 brew install --cask imageoptim # Image Optimizer
 brew install --cask licecap # Record animated gifs
 brew install --cask gimp # image manipulation
+brew install --cask krita # new
 brew install --cask inkscape
+brew install --cask tiled # new
 brew install --cask fontforge
 brew install --cask blender # i like modelling and do papercraft stuff.
+brew install --cask godot # new
+brew install --cask audacity # new
 brew install --cask vlc
 
 # System utilities and inspection
@@ -237,6 +278,7 @@ brew install --cask beyond-compare # diff/merge ui tool
 brew install --cask deltawalker # diff/merge ui tool
 brew install --cask kaleidoscope # diff/merge ui tool
 brew install --cask steam # i am a gamer
+brew install --cask heroic # new
 
 # Quick Look plugins
 brew install --cask qlmarkdown # markdown
