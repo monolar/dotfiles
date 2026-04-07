@@ -65,13 +65,14 @@ brew install grep
 brew install findutils
 brew install gnu-tar
 brew install gawk
-brew install z
+brew install zoxide # new
 brew install grc
 brew install reattach-to-user-namespace
 brew install tree
 brew install watch
 brew install pick # for picking stuff from big lists
 brew install pv # Pipeline
+brew install eza # new
 
 # Editors and terminal workflow
 brew install vim --override-system-vi
@@ -80,15 +81,14 @@ brew install neovim
 brew install tmux
 brew install ranger
 brew install midnight-commander
-brew install ghostty # a nice terminal emulator
 
 # Search, navigation, and inspection
 brew install htop
 brew install pstree
-brew install the_silver_searcher # faster search
 brew install ripgrep # rust powered grep/ag alternative
 brew install fd # find alternative (gitignore aware)
 brew install fzf # command line fuzzy finder
+brew install atuin # new
 brew install ctags
 brew install cloc # source code line counter
 brew install bat # cat for markdown
@@ -101,6 +101,7 @@ brew install git
 brew install subversion
 brew install mercurial # Source code versioning system
 brew install tig
+brew install lazygit # new
 brew install stow
 
 # Languages and build tooling
@@ -108,7 +109,7 @@ brew install cmake
 brew install python
 brew install pyenv
 brew install pyenv-virtualenv
-brew install pipenv
+brew install uv # new
 brew install node
 brew install go
 brew install rust
@@ -127,9 +128,10 @@ brew install httpie
 brew install wget
 brew install nginx
 brew install haproxy
+brew install direnv # new
 brew install watchman # watch fs changes
 brew install watchexec # watch fs changes (gitignore aware)
-brew install docker-compose
+# brew install docker-compose
 
 # Databases and services
 brew install sqlite
@@ -197,6 +199,7 @@ brew install --cask datagrip # Jetbrains' take on sql workbench
 brew install --cask dbvisualizer
 
 # Terminal and shell utilities
+brew install --cask ghostty # a nice terminal emulator
 brew install --cask iterm2 # Terminal alternative
 brew install --cask alacritty # gpu based terminal emulator
 brew install --cask servpane # convenient way to start/stop brew services from menubar
