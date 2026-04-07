@@ -137,11 +137,12 @@ function _maybe_upgrade() {
   done
 }
 
-function _append_items() {
-  local target_name="$1"
-  shift
-  local -n target_ref="$target_name"
-  target_ref+=("$@")
+function _append_formulae() {
+  FORMULAE+=("$@")
+}
+
+function _append_casks() {
+  CASKS+=("$@")
 }
 
 function _collect_group_items() {
@@ -149,7 +150,7 @@ function _collect_group_items() {
 
   case "$group" in
     core)
-      _append_items FORMULAE \
+      _append_formulae \
         bash fish bash-completion2 coreutils binutils grep findutils gnu-tar gawk \
         zoxide grc reattach-to-user-namespace tree watch pick pv eza \
         vim vimpager neovim tmux ranger midnight-commander \
@@ -157,80 +158,80 @@ function _collect_group_items() {
         git subversion mercurial tig lazygit stow \
         cmake python pyenv pyenv-virtualenv uv \
         gpg direnv
-      _append_items CASKS \
+      _append_casks \
         ghostty iterm2 visual-studio-code
       ;;
     languages-modern)
-      _append_items FORMULAE \
+      _append_formulae \
         python pyenv pyenv-virtualenv uv node go rust zig lua \
         rbenv ruby-build openjdk gradle v8 zlib \
         qt pyqt
-      _append_items CASKS temurin
+      _append_casks temurin
       ;;
     languages-retro)
-      _append_items FORMULAE \
+      _append_formulae \
         gcc fpc gnu-cobol tcl-tk mono
       ;;
     languages-exotic)
-      _append_items FORMULAE \
+      _append_formulae \
         erlang elixir ocaml sbcl guile racket \
         groovy scala kotlin \
         crystal nim stack logtalk inform
       ;;
     infra)
-      _append_items FORMULAE \
+      _append_formulae \
         httpie wget nginx haproxy watchman watchexec \
         graphviz qcachegrind since zopfli lcov
       ;;
     databases)
-      _append_items FORMULAE \
+      _append_formulae \
         sqlite mysql@8.0 mysql-client redis memcached memcache-top neo4j
-      _append_items CASKS \
+      _append_casks \
         mysqlworkbench sequel-ace tableplus datagrip dbvisualizer
       ;;
     cloud)
-      _append_items CASKS \
+      _append_casks \
         google-cloud-sdk docker virtualbox tunnelblick vyprvpn
       ;;
     java-api)
-      _append_items FORMULAE gradle
-      _append_items CASKS \
+      _append_formulae gradle
+      _append_casks \
         temurin postman insomnia soapui paw cocoarestclient
       ;;
     devapps)
-      _append_items CASKS \
+      _append_casks \
         intellij-idea-ce pycharm-ce visual-studio-code \
         github tower sourcetree gitkraken versions
       ;;
     communication)
-      _append_items CASKS \
+      _append_casks \
         discord slack adium telegram signal skype whatsapp
       ;;
     browsers)
-      _append_items CASKS \
+      _append_casks \
         firefox libreoffice fantastical macdown
       ;;
     creative)
-      _append_items FORMULAE \
+      _append_formulae \
         libtiff libjpeg webp little-cms2 imagemagick cairo gifsicle
-      _append_items CASKS \
+      _append_casks \
         xquartz imageoptim licecap gimp krita inkscape tiled fontforge blender audacity vlc
       ;;
     game-dev)
-      _append_items CASKS \
+      _append_casks \
         godot tiled blender krita inkscape audacity
       ;;
     gaming)
-      _append_items CASKS \
+      _append_casks \
         steam heroic
       ;;
     system-utils)
-      _append_items CASKS \
+      _append_casks \
         alacritty servpane clipy onyx disk-inventory-x jewelrybox \
         beyond-compare deltawalker kaleidoscope
       ;;
     quicklook)
-      _append_items CASKS \
+      _append_casks \
         qlmarkdown quicklook-json
       ;;
     *)
@@ -242,21 +243,34 @@ function _collect_group_items() {
   esac
 }
 
-function _dedupe_array() {
-  local array_name="$1"
-  local -n array_ref="$array_name"
+function _dedupe_formulae() {
   local deduped=()
-  local seen=()
+  local seen_list=" "
   local item
 
-  for item in "${array_ref[@]}"; do
-    if [[ " ${seen[*]} " != *" ${item} "* ]]; then
+  for item in "${FORMULAE[@]}"; do
+    if [[ "$seen_list" != *" ${item} "* ]]; then
       deduped+=("$item")
-      seen+=("$item")
+      seen_list+="${item} "
     fi
   done
 
-  array_ref=("${deduped[@]}")
+  FORMULAE=("${deduped[@]}")
+}
+
+function _dedupe_casks() {
+  local deduped=()
+  local seen_list=" "
+  local item
+
+  for item in "${CASKS[@]}"; do
+    if [[ "$seen_list" != *" ${item} "* ]]; then
+      deduped+=("$item")
+      seen_list+="${item} "
+    fi
+  done
+
+  CASKS=("${deduped[@]}")
 }
 
 function _print_selection_summary() {
@@ -314,8 +328,8 @@ for group in "${SELECTED_GROUPS[@]}"; do
   _collect_group_items "$group"
 done
 
-_dedupe_array FORMULAE
-_dedupe_array CASKS
+_dedupe_formulae
+_dedupe_casks
 
 _print_selection_summary
 
