@@ -75,10 +75,10 @@ brew install python
 brew install pyenv
 brew install pyenv-virtualenv
 brew install --cask google-cloud-sdk
-# brew install pyenv-virtualenvwrapper
 brew install pipenv
 brew install vim --override-system-vi
 brew install vimpager
+brew install neovim
 brew install tmux
 brew install ranger
 brew install htop
@@ -144,29 +144,16 @@ brew install watchman # watch fs changes
 brew install watchexec # watch fs changes (gitignore aware)
 brew install memcache-top
 
-# touchbar
-brew install --cask pock
-
-# Docker
-# brew install docker-machine
-# brew install codeclimate
+# Java and neo4j
+brew install neo4j # Graph Database
 
 echo "installing Cask Applications..."
 brew install --cask docker
 
-# Java and neo4j
-brew install neo4j # Graph Database
-
 brew install --cask intellij-idea-ce
 brew install --cask pycharm-ce
 
-# brew install Caskroom/cask/easysimbl
-# echo "Starting EasySIMBL: Check 'Use SIMBL' checkbox..."
-# open ~/Applications/EasySIMBL.app
-
 brew install --cask iterm2 # Terminal alternative
-# brew install --cask mou # Markdown Editor
-# brew install --cask google-chrome # Browser
 brew install --cask slack # Messaging
 brew install --cask adium # Chat client
 brew install --cask temurin
@@ -193,15 +180,12 @@ brew install --cask blender # i like modelling and do papercraft stuff.
 brew install --cask steam # i am a gamer
 brew install --cask vlc
 ## Commercial Cask Applications (may work as trial)
-# brew install --cask sublime-text3
 brew install --cask tower # tower2 git ui client
 brew install --cask versions # svn ui client
-brew install --cask libreoffice # productivity stuff you cannot without
-# brew install Caskroom/cask/kitematic # Docker
+brew install --cask libreoffice
 brew install --cask disk-inventory-x # file system overview
 brew install --cask dbvisualizer
 brew install --cask sourcetree # another git client
-# brew install --cask rdm # redis ui client
 brew install --cask clipy # A Clipboard extension
 brew install --cask tunnelblick # A VPN Client
 brew install --cask postman
