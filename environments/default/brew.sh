@@ -1,293 +1,333 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
-# TODO: Be more defensively
+set -euo pipefail
+
+# Install Homebrew packages in selectable groups.
+
+DEFAULT_GROUPS=(core)
+SELECTED_GROUPS=()
+DRY_RUN=false
+INSTALL_ALL=false
 
 function _get_root_permissions() {
   echo "* getting root permissions once at the start..."
-  # Ask for the administrator password upfront.
   sudo -v
 
-  # Keep-alive: update existing `sudo` time stamp until `brew.sh` has finished.
+  # Keep the sudo timestamp alive while brew.sh is running.
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 }
 
-_get_root_permissions
+function _usage() {
+  cat <<'EOF'
+Usage: ./brew.sh [--list-groups] [--dry-run] [all|GROUP ...]
 
-which -s brew
-if [[ $? != 0 ]] ; then
+Examples:
+  ./brew.sh
+  ./brew.sh --list-groups
+  ./brew.sh core communication
+  ./brew.sh languages-modern languages-retro creative game-dev
+  ./brew.sh --dry-run all
+
+If no groups are provided, the default groups are installed:
+  core
+EOF
+}
+
+function _list_groups() {
+  cat <<'EOF'
+Available groups:
+  core                Essential CLI tools, editors, search, dotfiles, and basic terminals
+  languages-modern    Current mainstream languages and their primary tooling
+  languages-retro     Historical and still-used languages
+  languages-exotic    Functional, JVM-adjacent, niche, and IF languages
+  infra               Networking, HTTP, infra, and local service helpers
+  databases           Databases, service daemons, and database clients
+  cloud               Cloud, container, and VM tools
+  java-api            Java runtimes, build tools, and API clients
+  devapps             IDEs, Git GUIs, and desktop developer apps
+  communication       Messaging and collaboration apps
+  browsers            Browsers and productivity apps
+  creative            Media, graphics, and asset-creation tools
+  game-dev            Game creation and related tools
+  gaming              Game launchers and player-facing gaming apps
+  system-utils        System inspection and desktop utility apps
+  quicklook           Quick Look plugins
+EOF
+}
+
+function _parse_args() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --help|-h)
+        _usage
+        exit 0
+        ;;
+      --list-groups)
+        _list_groups
+        exit 0
+        ;;
+      --dry-run)
+        DRY_RUN=true
+        ;;
+      all)
+        INSTALL_ALL=true
+        ;;
+      *)
+        SELECTED_GROUPS+=("$1")
+        ;;
+    esac
+    shift
+  done
+
+  if [[ "$INSTALL_ALL" == true ]]; then
+    SELECTED_GROUPS=(
+      core
+      languages-modern
+      languages-retro
+      languages-exotic
+      infra
+      databases
+      cloud
+      java-api
+      devapps
+      communication
+      browsers
+      creative
+      game-dev
+      gaming
+      system-utils
+      quicklook
+    )
+  elif [[ ${#SELECTED_GROUPS[@]} -eq 0 ]]; then
+    SELECTED_GROUPS=("${DEFAULT_GROUPS[@]}")
+  fi
+}
+
+function _require_brew() {
+  if ! command -v brew >/dev/null 2>&1; then
     echo "* install homebrew ..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
+  else
     echo "* update homebrew ..."
     brew update
-fi
+  fi
 
-echo "* checking homebrew ..."
-brew doctor
+  echo "* checking homebrew ..."
+  brew doctor
+}
 
 function _taps() {
-  taps=(
-    # codeclimate/formulae
-    # homebrew/science
-    # homebrew/python
-    # adymo/kde
-    # thoughtbot/formulae
+  local taps=(
+    # Keep this array ready for third-party taps when needed.
   )
-  for i in "${taps[@]}"
-  do
-   :
-   echo "tapping '${i}' ..."
-   brew tap $i
+
+  for i in "${taps[@]}"; do
+    echo "tapping '${i}' ..."
+    brew tap "$i"
   done
 }
 
-_taps
-
-# TODO brew upgrade --cask
-echo "Do you wish to upgrade all packages?"
-select yn in "Yes" "No"; do
+function _maybe_upgrade() {
+  echo "Do you wish to upgrade all packages?"
+  select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo "* Upgrade all packages"; brew upgrade; break;;
-        No ) echo "* Continue without upgrading packages"; break;;
+      Yes ) echo "* Upgrade all packages"; brew upgrade; break;;
+      No ) echo "* Continue without upgrading packages"; break;;
     esac
+  done
+}
+
+function _append_items() {
+  local target_name="$1"
+  shift
+  local -n target_ref="$target_name"
+  target_ref+=("$@")
+}
+
+function _collect_group_items() {
+  local group="$1"
+
+  case "$group" in
+    core)
+      _append_items FORMULAE \
+        bash fish bash-completion2 coreutils binutils grep findutils gnu-tar gawk \
+        zoxide grc reattach-to-user-namespace tree watch pick pv eza \
+        vim vimpager neovim tmux ranger midnight-commander \
+        htop pstree ripgrep fd fzf atuin ctags cloc bat jq jsonpp csvkit \
+        git subversion mercurial tig lazygit stow \
+        cmake python pyenv pyenv-virtualenv uv \
+        gpg direnv
+      _append_items CASKS \
+        ghostty iterm2 visual-studio-code
+      ;;
+    languages-modern)
+      _append_items FORMULAE \
+        python pyenv pyenv-virtualenv uv node go rust zig lua \
+        rbenv ruby-build openjdk gradle v8 zlib \
+        qt pyqt
+      _append_items CASKS temurin
+      ;;
+    languages-retro)
+      _append_items FORMULAE \
+        gcc fpc gnu-cobol tcl-tk mono
+      ;;
+    languages-exotic)
+      _append_items FORMULAE \
+        erlang elixir ocaml sbcl guile racket \
+        groovy scala kotlin \
+        crystal nim stack logtalk inform
+      ;;
+    infra)
+      _append_items FORMULAE \
+        httpie wget nginx haproxy watchman watchexec \
+        graphviz qcachegrind since zopfli lcov
+      ;;
+    databases)
+      _append_items FORMULAE \
+        sqlite mysql@8.0 mysql-client redis memcached memcache-top neo4j
+      _append_items CASKS \
+        mysqlworkbench sequel-ace tableplus datagrip dbvisualizer
+      ;;
+    cloud)
+      _append_items CASKS \
+        google-cloud-sdk docker virtualbox tunnelblick vyprvpn
+      ;;
+    java-api)
+      _append_items FORMULAE gradle
+      _append_items CASKS \
+        temurin postman insomnia soapui paw cocoarestclient
+      ;;
+    devapps)
+      _append_items CASKS \
+        intellij-idea-ce pycharm-ce visual-studio-code \
+        github tower sourcetree gitkraken versions
+      ;;
+    communication)
+      _append_items CASKS \
+        discord slack adium telegram signal skype whatsapp
+      ;;
+    browsers)
+      _append_items CASKS \
+        firefox libreoffice fantastical macdown
+      ;;
+    creative)
+      _append_items FORMULAE \
+        libtiff libjpeg webp little-cms2 imagemagick cairo gifsicle
+      _append_items CASKS \
+        xquartz imageoptim licecap gimp krita inkscape tiled fontforge blender audacity vlc
+      ;;
+    game-dev)
+      _append_items CASKS \
+        godot tiled blender krita inkscape audacity
+      ;;
+    gaming)
+      _append_items CASKS \
+        steam heroic
+      ;;
+    system-utils)
+      _append_items CASKS \
+        alacritty servpane clipy onyx disk-inventory-x jewelrybox \
+        beyond-compare deltawalker kaleidoscope
+      ;;
+    quicklook)
+      _append_items CASKS \
+        qlmarkdown quicklook-json
+      ;;
+    *)
+      echo "Unknown group: $group" >&2
+      echo >&2
+      _list_groups >&2
+      exit 1
+      ;;
+  esac
+}
+
+function _dedupe_array() {
+  local array_name="$1"
+  local -n array_ref="$array_name"
+  local deduped=()
+  local seen=()
+  local item
+
+  for item in "${array_ref[@]}"; do
+    if [[ " ${seen[*]} " != *" ${item} "* ]]; then
+      deduped+=("$item")
+      seen+=("$item")
+    fi
+  done
+
+  array_ref=("${deduped[@]}")
+}
+
+function _print_selection_summary() {
+  echo "* selected groups: ${SELECTED_GROUPS[*]}"
+  echo "* formula count: ${#FORMULAE[@]}"
+  echo "* cask count: ${#CASKS[@]}"
+}
+
+function _install_formulae() {
+  if [[ ${#FORMULAE[@]} -eq 0 ]]; then
+    return
+  fi
+
+  echo "* installing formulae ..."
+  if [[ "$DRY_RUN" == true ]]; then
+    printf 'brew install %s\n' "${FORMULAE[@]}"
+  else
+    brew install "${FORMULAE[@]}"
+  fi
+}
+
+function _install_casks() {
+  if [[ ${#CASKS[@]} -eq 0 ]]; then
+    return
+  fi
+
+  echo "* installing casks ..."
+  if [[ "$DRY_RUN" == true ]]; then
+    printf 'brew install --cask %s\n' "${CASKS[@]}"
+  else
+    brew install --cask "${CASKS[@]}"
+  fi
+}
+
+function _finalize() {
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "* dry run complete; no packages were installed."
+    return
+  fi
+
+  echo "Cleaning Brews..."
+  brew cleanup
+
+  if command -v rbenv >/dev/null 2>&1; then
+    eval "$(rbenv init -)"
+  fi
+}
+
+_parse_args "$@"
+
+FORMULAE=()
+CASKS=()
+
+for group in "${SELECTED_GROUPS[@]}"; do
+  _collect_group_items "$group"
 done
 
-# Formulae
-echo "* brewing formulae ..."
+_dedupe_array FORMULAE
+_dedupe_array CASKS
 
-# Shells and core CLI
-brew install bash fish
-brew install bash-completion2
-brew install coreutils
-brew install binutils
-brew install grep
-brew install findutils
-brew install gnu-tar
-brew install gawk
-brew install zoxide # new
-brew install grc
-brew install reattach-to-user-namespace
-brew install tree
-brew install watch
-brew install pick # for picking stuff from big lists
-brew install pv # Pipeline
-brew install eza # new
+_print_selection_summary
 
-# Editors and terminal workflow
-brew install vim --override-system-vi
-brew install vimpager
-brew install neovim
-brew install tmux
-brew install ranger
-brew install midnight-commander
-
-# Search, navigation, and inspection
-brew install htop
-brew install pstree
-brew install ripgrep # rust powered grep/ag alternative
-brew install fd # find alternative (gitignore aware)
-brew install fzf # command line fuzzy finder
-brew install atuin # new
-brew install ctags
-brew install cloc # source code line counter
-brew install bat # cat for markdown
-brew install jq # Command line json processor
-brew install jsonpp # Command line json pretty printer
-brew install csvkit # nice tools for csv operations
-
-# Version control and dotfiles
-brew install git
-brew install subversion
-brew install mercurial # Source code versioning system
-brew install tig
-brew install lazygit # new
-brew install stow
-
-# Languages and build tooling
-brew install cmake
-
-# Mainstream and current languages
-brew install python
-brew install pyenv
-brew install pyenv-virtualenv
-brew install uv # new
-brew install node
-brew install go
-brew install rust
-brew install zig
-brew install lua # new
-
-# Polyglot runtime and build tooling
-brew install rbenv ruby-build
-brew install openjdk # new
-brew install gradle
-brew install v8
-brew install zlib
-
-# Functional, BEAM, and Lisp-family languages
-brew install erlang # new
-brew install elixir # new
-brew install ocaml # new
-brew install sbcl # new
-brew install guile # new
-brew install racket # new
-
-# JVM and adjacent languages
-brew install groovy # new
-brew install scala # new
-brew install kotlin # new
-
-# Native, systems, and alternative languages
-brew install crystal
-brew install nim
-brew install stack
-brew install mono # new
-
-# Historical and still-used languages
-brew install gcc # new; includes gfortran
-brew install fpc # new
-brew install gnu-cobol # new
-brew install tcl-tk # new
-
-# Interactive fiction and language-adjacent tools
-brew install inform # new
-
-# UI and language bindings
-brew install qt
-brew install pyqt
-
-# Networking, HTTP, and infrastructure
-brew install httpie
-brew install wget
-brew install nginx
-brew install haproxy
-brew install direnv # new
-brew install watchman # watch fs changes
-brew install watchexec # watch fs changes (gitignore aware)
-# brew install docker-compose
-
-# Databases and services
-brew install sqlite
-brew install mysql@8.0
-brew install mysql-client
-brew install redis
-brew install memcached
-brew install memcache-top
-brew install neo4j # Graph Database
-
-# Security and certificates
-brew install gpg
-
-# Data, docs, and utilities
-brew install graphviz
-brew install qcachegrind # for profile data visualisation
-brew install since
-brew install logtalk # prolog inspired programming language
-brew install zopfli # compression algorithm
-brew install lcov
-
-# Imaging and graphics
-brew install libtiff
-brew install libjpeg
-brew install webp
-brew install little-cms2
-brew install imagemagick
-brew install cairo
-brew install gifsicle # for optimizing GIFs
-
-# Casks
-echo "installing Cask Applications..."
-
-# Cloud and containers
-brew install --cask google-cloud-sdk
-brew install --cask docker
-brew install --cask virtualbox
-brew install --cask tunnelblick # A VPN Client
-brew install --cask vyprvpn
-
-# Developer IDEs and editors
-brew install --cask intellij-idea-ce
-brew install --cask pycharm-ce
-brew install --cask visual-studio-code
-brew install --cask github # Github ui client
-brew install --cask tower # tower2 git ui client
-brew install --cask sourcetree # another git client
-brew install --cask gitkraken # some git ui
-brew install --cask versions # svn ui client
-
-# Java and API tooling
-brew install --cask temurin
-brew install gradle # Java build tool like maven
-brew install --cask postman
-brew install --cask insomnia # REST ui Testing tool
-brew install --cask soapui # REST ui Testing workbench
-brew install --cask paw # api tool
-brew install --cask cocoarestclient
-
-# Database clients
-brew install --cask mysqlworkbench
-brew install --cask sequel-ace # Sql workbench
-brew install --cask tableplus # another sql workbench (also supports REDIS!!)
-brew install --cask datagrip # Jetbrains' take on sql workbench
-brew install --cask dbvisualizer
-
-# Terminal and shell utilities
-brew install --cask ghostty # a nice terminal emulator
-brew install --cask iterm2 # Terminal alternative
-brew install --cask alacritty # gpu based terminal emulator
-brew install --cask servpane # convenient way to start/stop brew services from menubar
-brew install --cask clipy # A Clipboard extension
-
-# Communication and collaboration
-brew install --cask discord # new
-brew install --cask slack # Messaging
-brew install --cask adium # Chat client
-brew install --cask telegram # new
-brew install --cask signal # new
-brew install --cask skype
-brew install --cask whatsapp # yeah, i know
-
-# Browsers and productivity
-brew install --cask firefox
-brew install --cask libreoffice
-brew install --cask fantastical # iCal alternative
-brew install --cask macdown # Another Markdown editor
-
-# Media, design, game creation, and graphics
-brew install --cask xquartz
-brew install --cask imageoptim # Image Optimizer
-brew install --cask licecap # Record animated gifs
-brew install --cask gimp # image manipulation
-brew install --cask krita # new
-brew install --cask inkscape
-brew install --cask tiled # new
-brew install --cask fontforge
-brew install --cask blender # i like modelling and do papercraft stuff.
-brew install --cask godot # new
-brew install --cask audacity # new
-brew install --cask vlc
-
-# System utilities and inspection
-brew install --cask onyx # OS X maintenance and power tools
-brew install --cask disk-inventory-x # file system overview
-brew install --cask jewelrybox # RVM UI
-
-# Commercial or optional desktop apps
-brew install --cask beyond-compare # diff/merge ui tool
-brew install --cask deltawalker # diff/merge ui tool
-brew install --cask kaleidoscope # diff/merge ui tool
-brew install --cask steam # i am a gamer
-brew install --cask heroic # new
-
-# Quick Look plugins
-brew install --cask qlmarkdown # markdown
-brew install --cask quicklook-json
-
-echo "Cleaning Brews..."
-brew cleanup
-
-# Initialize rbenv after installation
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init -)"
+if [[ "$DRY_RUN" == true ]]; then
+  echo "* dry run mode enabled"
+else
+  _get_root_permissions
+  _require_brew
+  _taps
+  _maybe_upgrade
 fi
+
+_install_formulae
+_install_casks
+_finalize
