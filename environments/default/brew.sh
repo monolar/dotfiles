@@ -29,7 +29,6 @@ brew doctor
 function _taps() {
   taps=(
     # codeclimate/formulae
-    martido/brew-graph
     # homebrew/science
     # homebrew/python
     # adymo/kde
@@ -56,13 +55,11 @@ done
 
 # All "normal" brew packages...
 echo "* brewing ..."
-brew install brew-graph
 brew install bash fish
 brew install bash-completion2
 brew install coreutils
 brew install binutils
 brew install git
-brew install git-sh
 brew install subversion
 brew install grep
 brew install z
@@ -109,7 +106,6 @@ brew install watch
 # brew install thefuck
 # brew install the_platinum_searcher
 brew install since
-brew install pup
 brew install mercurial # Source code versioning system
 brew install v8 haproxy midnight-commander
 brew install logtalk # prolog inspired programming language
@@ -141,7 +137,6 @@ brew install --cask xquartz
 brew install imagemagick
 brew install cairo
 
-brew install py2cairo # this will ask you to download xquartz and install it
 brew install pyqt
 
 # brew install adymo/kde/massif-visualizer # for memory profile visualisation
@@ -155,16 +150,11 @@ brew install --cask pock
 # Docker
 # brew install docker-machine
 # brew install codeclimate
-brew install docker
-brew install docker-compose
-
-brew install packer # Hashicorps meta-take on building
 
 echo "installing Cask Applications..."
 brew install --cask docker
 
 # Java and neo4j
-brew install --cask temurin8
 brew install neo4j # Graph Database
 
 brew install --cask intellij-idea-ce
@@ -186,8 +176,6 @@ brew install --cask github # Github ui client
 brew install --cask sequel-ace # Sql workbench
 brew install --cask tableplus # another sql workbench (also supports REDIS!!)
 brew install --cask datagrip # Jetbrains' take on sql workbench
-brew install --cask teamsql # Electron app for collaborative sql editing
-brew install --cask atom # Editor
 brew install --cask visual-studio-code
 brew install --cask jewelrybox # RVM UI
 brew install --cask cocoarestclient
@@ -200,7 +188,6 @@ brew install --cask gimp # image manipulation
 brew install --cask onyx # OS X maintenance and power tools
 # brew install --cask secrets # OS X settings panel
 brew install --cask firefox
-brew install --cask spectacle # manage windows and their positions
 brew install --cask fontforge
 brew install --cask blender # i like modelling and do papercraft stuff.
 brew install --cask steam # i am a gamer
@@ -229,7 +216,6 @@ brew install --cask insomnia # REST ui Testing tool
 brew install --cask soapui # REST ui Testing workbench
 brew install --cask paw # api tool
 brew install --cask vyprvpn
-brew install --cask kite # weird community autocomplete
 brew install --cask whatsapp # yeah, i know
 brew install --cask alacritty # gpu based terminal emulator
 
